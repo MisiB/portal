@@ -11,10 +11,17 @@ class select extends Component
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+    public $name;
+    public $label;
+    public $size;
+    public $optionlist;
+   public function __construct($name,$label,$size,$optionlist)
+   {
+    $this->name = $name;    
+    $this->label = $label;
+    $this->size = $size;
+    $this->optionlist = $optionlist;
+   }
 
     /**
      * Get the view / contents that represent the component.

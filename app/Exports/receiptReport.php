@@ -2,7 +2,8 @@
 
 namespace App\Exports;
 
-use App\Repositories\suspenseRepository;
+use App\Models\nonrefundable_invoices;
+use App\Repositories\administrator\suspenseRepository;
 use Maatwebsite\Excel\Concerns\FromArray;
 
 class receiptReport implements FromArray
@@ -19,7 +20,7 @@ class receiptReport implements FromArray
     }
     public function array():array
     {
-        $suspense = new suspenseRepository();
+        $repository = new suspenseRepository();
         $data = nonrefundable_invoices::with('receipts')
       ->wherebetween('created_at',[$this->from,$this->to])
      ->wherestatus('PAID')
@@ -32,7 +33,7 @@ class receiptReport implements FromArray
              foreach ($value[0]->receipts as $ky => $val) {
                  $method=$val->method;
                  if($method=='suspense'){
-                     $suspense = $suspense->et_suspnse_entry($val->source_id);
+                     $suspense = $repository->get_suspnse_entry($val->source_id);
                      if(!is_null($suspense)){
                          $method = $suspense->source;
                      }

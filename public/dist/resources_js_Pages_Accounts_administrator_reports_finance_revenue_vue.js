@@ -126,6 +126,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -742,11 +744,29 @@ var render = function() {
             "v-card",
             { staticClass: "mt-4", attrs: { flat: "" } },
             [
-              _c("v-card-title", [
-                _c("div", { staticClass: "display-1" }, [
-                  _vm._v("Revenue Report")
-                ])
-              ]),
+              _c(
+                "v-card-title",
+                [
+                  _c("div", { staticClass: "display-1" }, [
+                    _vm._v("Revenue Report")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: {
+                        rounded: "",
+                        depressed: "",
+                        href: _vm.$route("report-revenue-downloads.index")
+                      }
+                    },
+                    [_vm._v("Download View")]
+                  )
+                ],
+                1
+              ),
               _vm._v(" "),
               _c("v-divider"),
               _vm._v(" "),

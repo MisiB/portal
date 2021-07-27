@@ -31,7 +31,9 @@
             </v-card>            
              <v-card flat class="mt-4">
                  <v-card-title>
-                    <div class="display-1">Revenue Report</div>                
+                    <div class="display-1">Revenue Report</div>
+                    <v-spacer/>
+                    <v-btn rounded depressed :href="$route('report-revenue-downloads.index')">Download View</v-btn>                
                  </v-card-title>
                  <v-divider/>
                 <v-card-text>

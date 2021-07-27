@@ -1,3 +1,12 @@
-<div>
-    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
+<div class="{{$size}}">
+<div class="form-group{{ $errors->has($name) ? ' has-error' : '' }}">
+    <label for="{{ $name }}" class="control-label">{{ $label }}</label>
+    <input id="{{ $name }}" type="{{ $type }}" class="form-control @error($name) is-invalid @enderror" name="{{ $name }}" value="{{ old($name) }}">
+     @error($name)
+         
+              <p class="text-danger">  {{ $message }}</p>
+         
+     @enderror
+    
+</div>
 </div>

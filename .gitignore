@@ -6,6 +6,7 @@
 /public/plans
 /public/proof
 /public/returns
+/public/dist
 /node_modules
 /storage/*.key
 /vendor

@@ -4,24 +4,17 @@ namespace App\View\Components\forms;
 
 use Illuminate\View\Component;
 
-class input extends Component
+class errors extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $name;
-    public $type;
-    public $label;
-    public $size;
-   public function __construct($name,$type,$label,$size)
-   {
-    $this->name = $name;
-    $this->type = $type;
-    $this->label = $label;
-    $this->size = $size;
-   }
+    public function __construct()
+    {
+        //
+    }
 
     /**
      * Get the view / contents that represent the component.
@@ -30,6 +23,6 @@ class input extends Component
      */
     public function render()
     {
-        return view('components.forms.input');
+        return view('components.forms.errors');
     }
 }
