@@ -29,4 +29,16 @@ class invoiceController extends Controller
     $response = $this->invoice->verifyInvoice($invoicenumber);
     return redirect()->back()->with($response['status'],$response['message']);
   }
+
+  public function destroy($id){
+    $status = $this->invoice->removeItem($id);
+      
+    if($status['status']=='APPROVED' || $status['status']=='PENDING')
+    {
+        return  redirect()->route('payment')->with('successMessage','Registration successfully completed');
+    }
+    else{
+        return redirect()->back()->with($status['status'],$status['message']);
+    }
+  }
 }

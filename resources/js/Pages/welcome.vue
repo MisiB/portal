@@ -41,7 +41,80 @@
                     </v-card>
               </v-col>
             </v-row>
-           
+            <v-row class="mt-4">
+                <v-col md="4" offset-md="4" class="text-center">
+                     <div class="display-1">Banking Details</div>   
+                </v-col>
+            </v-row>
+
+            <v-row class="mt-4">
+             <v-col md="6" sm="12" xs="12">
+                  <v-card flat class="grey lighten-3">
+                      <v-card-title>Refundable FEEs(USD)</v-card-title>
+                      <v-card-text>
+                           <div class="text-h5 text--primary">BID BONDS only</div>
+                            <div>  CURRENCY: UNITED STATES DOLLARS (USD)</div>
+                            <div>ACCOUNT NUMBER: 10721064850128</div>
+                            <div>BRANCH SORT CODE: 6101</div>
+                            <div>SWIFT CODE: COBZZWHAXXX</div>
+                      </v-card-text>
+                  </v-card>
+             </v-col>
+             <v-col md="6" sm="12" xs="12">
+                  <v-card flat class="grey lighten-3">
+                      <v-card-title>Refundable FEEs(ZWL)</v-card-title>
+                      <v-card-text>
+                           <div class="text-h5 text--primary">BID BONDS only</div>
+                            <div>  CURRENCY: ZIM DOLLAR (ZWL)</div>
+                            <div>ACCOUNT NUMBER: 10721064850118</div>
+                            <div>BRANCH SORT CODE: ---</div>
+                            <div>SWIFT CODE: ------</div>
+                      </v-card-text>
+                  </v-card>
+             </v-col>
+            </v-row>
+
+             <v-row class="mt-4">
+             <v-col md="6" sm="12" xs="12">
+                  <v-card flat class="grey lighten-3">
+                      <v-card-title>Nonrefundable FEEs(USD)</v-card-title>
+                         <v-card-text>
+                           <div class="text-h6 text--primary">REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)</div>
+                            <div>  CURRENCY: UNITED STATES DOLLARS (USD)</div>
+                            <div>ACCOUNT NUMBER: 10721064850108</div>
+                            <div>BRANCH SORT CODE: 6101</div>
+                            <div>SWIFT CODE: COBZZWHAXXX</div>
+                      </v-card-text>
+                  </v-card>
+             </v-col>
+             <v-col md="6" sm="12" xs="12">
+                  <v-card flat class="grey lighten-3">
+                      <v-card-title>Nonrefundable FEEs(ZWL)</v-card-title>
+                        <v-card-text>
+                            <div class="text-h6 text--primary">REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)</div>
+                            <div>  CURRENCY: ZIM DOLLAR (ZWL)</div>
+                            <div>ACCOUNT NUMBER: 10721064850020</div>
+                            <div>BRANCH SORT CODE: 6101</div>
+                            <div>SWIFT CODE: COBZZWHAXXX</div>
+                      </v-card-text>
+                  </v-card>
+             </v-col>
+            </v-row>
+            <v-row class="mt-4">
+                <v-col>
+                    <v-card color="success">
+                        <v-card-text>
+                            <div class="d-flex">
+                            <div class="text-h5">Downlod the latest Government Gazette </div>                            
+                            <v-spacer/>
+                            <v-btn class="primary" href="./gazzates/file.pdf">Download</v-btn>
+                            </div>
+                            <div>Please note the government gazette might not show real time registrations. To access real time  supplier registrations <v-btn text :href="$route('suppliers')">CLICK HERE</v-btn></div>
+                         
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+            </v-row>
             <v-row class="mt-4">
                 <v-col>
         <v-card>

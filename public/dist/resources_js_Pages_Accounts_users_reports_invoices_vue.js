@@ -12,6 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layouts_userlayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Layouts/userlayout */ "./resources/js/Pages/Layouts/userlayout.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -121,6 +127,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['errors', 'successMessage', 'errorMessage', 'user', 'invoices'],
   components: {
@@ -137,6 +144,37 @@ __webpack_require__.r(__webpack_exports__);
     openReceipts: function openReceipts(receipts) {
       this.receiptModel = true;
       this.receipts = receipts;
+    },
+    cancelInvoice: function cancelInvoice(id) {
+      var _this = this;
+
+      vue__WEBPACK_IMPORTED_MODULE_1__.default.swal({
+        title: 'Are you sure?',
+        text: "You want to Cancel Invoice ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Cancel'
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          _this.loading = true;
+
+          _this.$inertia["delete"](_this.$route('reportInvoices.destroy', id), {
+            onSuccess: function onSuccess(page) {
+              if (_this.successMessage) {
+                vue__WEBPACK_IMPORTED_MODULE_1__.default.swal('Success', _this.successMessage, 'success');
+              }
+
+              if (_this.errorMessage) {
+                vue__WEBPACK_IMPORTED_MODULE_1__.default.swal('Error', _this.errorMessage, 'error');
+              }
+            }
+          });
+        } else {
+          _this.loading = false;
+        }
+      });
     }
   }
 });
@@ -659,7 +697,17 @@ var render = function() {
                                           ]),
                                           _vm._v(" "),
                                           _c("td", [
-                                            _vm._v(_vm._s(inv.category.name))
+                                            _c("div", [
+                                              _vm._v(_vm._s(inv.category.code))
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("div", [
+                                              _c("small", [
+                                                _vm._v(
+                                                  _vm._s(inv.category.name)
+                                                )
+                                              ])
+                                            ])
                                           ]),
                                           _vm._v(" "),
                                           _c("td", [
@@ -677,12 +725,39 @@ var render = function() {
                                             "td",
                                             { staticClass: "d-flex" },
                                             [
+                                              inv.status == "AWAITING"
+                                                ? _c(
+                                                    "v-btn",
+                                                    {
+                                                      staticClass:
+                                                        "white--text mt-1 ml-1",
+                                                      attrs: {
+                                                        color: "error",
+                                                        depressed: "",
+                                                        small: "",
+                                                        loading: _vm.loading,
+                                                        disabled: _vm.loading
+                                                      },
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.cancelInvoice(
+                                                            inv.id
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [_vm._v("CANCEL")]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
                                               inv.status != "CANCELLED"
                                                 ? _c(
                                                     "v-btn",
                                                     {
                                                       staticClass:
-                                                        "white--text mt-1",
+                                                        "white--text mt-1 ml-1",
                                                       attrs: {
                                                         color: "green",
                                                         depressed: "",
@@ -694,7 +769,7 @@ var render = function() {
                                                         )
                                                       }
                                                     },
-                                                    [_vm._v("Print Invoice")]
+                                                    [_vm._v("Print")]
                                                   )
                                                 : _vm._e(),
                                               _vm._v(" "),
@@ -702,7 +777,7 @@ var render = function() {
                                                 "v-btn",
                                                 {
                                                   staticClass:
-                                                    "white--text mt-1 mb-1",
+                                                    "white--text mt-1 mb-1 ml-1",
                                                   attrs: {
                                                     color: "blue",
                                                     depressed: "",
@@ -722,7 +797,7 @@ var render = function() {
                                                     "v-btn",
                                                     {
                                                       staticClass:
-                                                        "mt-1 mb-1 ml-2",
+                                                        "mt-1 mb-1 ml-1",
                                                       attrs: {
                                                         depressed: "",
                                                         small: "",

@@ -1,5 +1,6 @@
 <template>
     <div>
+        
              <v-simple-table>
                         <template v-slot:default>
                             <thead>
@@ -32,6 +33,7 @@
                             </tbody>
                         </template>
                     </v-simple-table>
+             
     </div>
 </template>
 <script>

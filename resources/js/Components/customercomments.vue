@@ -1,8 +1,6 @@
 <template>
     <div>
-        <v-card flat class="mt-4">
-            <v-card-title class="indigo white--text">Comments</v-card-title>
-            <v-card-text class="grey lighten-4">
+      
                 <v-simple-table>
                  <template v-slot:default>
                         <thead>
@@ -30,8 +28,7 @@
 
                     </template>
                 </v-simple-table>
-            </v-card-text>
-        </v-card>
+          
     </div>
 </template>
 <script>

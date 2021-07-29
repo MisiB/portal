@@ -35,66 +35,64 @@
        
         <v-row>
             <v-col cols="6" md="3">
-                <v-card flat>
-                    <v-card-text class="d-flex">
-                        <div class="pb-2 pt-2">
-                            <v-icon x-large>mdi-wallet</v-icon>
-                        </div>
-                        <v-spacer/>
-                        <div>
+                <v-card flat class="light-blue rounded-none">
+                    <v-card-title class="rounded-none d-flex justify-center"><div>Nonrefundable wallet</div></v-card-title>
+                    <v-card-text class="text-center">
+
+                          <div class="text-center">                     
                         <div :class="leadClass">
                             <div class="mr-2">ZWL</div><div>{{data.zwl_nonrefundable_balance}}</div>
                         </div>
-                        <div>Nonrefundable wallet</div>
-                        </div>
+                          </div>
+                                              
+                         <topup type="zwl_nonrefundable"/>
+                         
                     </v-card-text>
                 </v-card>
             </v-col>
              <v-col cols="6" md="3">
-                <v-card flat>
-                    <v-card-text class="d-flex">
-                         <div class="pt-2 pb-2">
-                            <v-icon x-large>mdi-wallet</v-icon>
-                        </div>
-                        <v-spacer/>
-                        <div>
+                <v-card flat class="red accent-2 rounded-none">
+                    <v-card-title class="rounded-none d-flex justify-center"><div>Nonrefundable wallet</div></v-card-title>
+                    
+                    <v-card-text class="text-center"> 
+                        <div class="text-center">                     
                           <div :class="leadClass">
                             <div class="mr-2">USD</div><div>{{data.usd_nonrefundable_balance}}</div>
                         </div>
-                         <div>Nonrefundable wallet</div>
                         </div>
+                         <topup type="usd_nonrefundable"/>
                     </v-card-text>
                 </v-card>
             </v-col>
              <v-col cols="6" md="3">
-                <v-card flat>
-                    <v-card-text class="d-flex">
-                         <div class="pt-2 pb-2">
-                            <v-icon x-large>mdi-wallet</v-icon>
-                        </div>
-                        <v-spacer/>
-                        <div>
+                <v-card flat class="indigo rounded-none">
+                    <v-card-title class="rounded-none d-flex justify-center"><div>Refundable wallet</div></v-card-title>
+                    
+                    <v-card-text class="text-center"> 
+                      
+                        <div class="text-center">
                           <div :class="leadClass">
                             <div class="mr-2">ZWL</div><div>{{data.zwl_refundable_balance}}</div>
                         </div>
-                        <div>Refundable wallet</div>
+                      
                         </div>
+                         <topup type="zwl_refundable"/>
                     </v-card-text>
                 </v-card>
             </v-col>
-             <v-col cols="6" md="3">
-                <v-card flat>
-                 <v-card-text class="d-flex">
-                         <div class="pa-2">
-                            <v-icon x-large>mdi-wallet</v-icon>
-                        </div>
-                        <v-spacer/>
-                        <div>
+             <v-col  md3 sm12>
+                <v-card flat class="green lighten-1 rounded-none">
+                    <v-card-title class="rounded-none d-flex justify-center"><div>Refundable wallet</div></v-card-title>
+                    
+                    <v-card-text class="text-center"> 
+                      
+                        <div class="text-center">
                           <div :class="leadClass">
                             <div class="mr-2">USD</div><div>{{data.usd_refundable_balance}}</div>
                         </div>
-                        <div class="text-sm">Refundable Wallet</div>
+                        
                         </div>
+                         <topup type="usd_refundable"/>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -217,11 +215,13 @@
 <script>
 import  userlayout  from '../../Layouts/userlayout';
 import bankDetails from "../../../Components/bankDetails";
+import topup from '../../../Components/topup';
 export  default {
     props: ['errors','successMessage','errorMessage','data'],
     components: {
         userlayout,
-        bankDetails
+        bankDetails,
+        topup
     },
     data(){
         return{
@@ -274,11 +274,11 @@ export  default {
          leadClass(){
             switch (this.$vuetify.breakpoint.name)
                 {
-                case 'xs': return 'd-flex subtitle-1'
-                case 'sm': return 'd-flex subtitle-1'
-                case 'md': return 'd-flex subtitle-1'
-                case 'lg': return 'd-flex headline'
-                case 'xl': return  'd-flex body-1'
+                case 'xs': return 'd-flex justify-center subtitle-1'
+                case 'sm': return 'd-flex justify-center subtitle-1'
+                case 'md': return 'd-flex justify-center subtitle-1'
+                case 'lg': return 'd-flex justify-center headline'
+                case 'xl': return  'd-flex justify-center body-1'
                 }
          },countAwaiting(){
              return this.data.awaiting.cost

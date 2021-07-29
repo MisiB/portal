@@ -505,6 +505,10 @@ class generalHelper
         return accountnumbers::where(['currency'=>$currency,'type'=>$type])->get();
     }
 
+    function get_accounts(){
+        return accountnumbers::get();
+    }
+
     function get_account_type($accountnumber){
         return accountnumbers::whereaccountnumber($accountnumber)->get();
     }

@@ -90,7 +90,7 @@ class revenuereportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //$request->validate(['fromdate'=>'required','todate'=>'required','currency'=>'required']); 
     }
 
     /**

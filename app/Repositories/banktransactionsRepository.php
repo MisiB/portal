@@ -37,7 +37,7 @@ class banktransactionsRepository implements banktransactionsInterface{
                        $status ="CLAIMED";                   
                    }
 
-                 Log::info($request->all());
+              
               
                 $transaction =  banktransactions::create(['bank_id'=>$bank->id,
                                             'trans_date'=>$request->trans_date,

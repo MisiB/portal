@@ -1,14 +1,14 @@
 <template>
     <div>
-        <v-card flat class="mt-4">
-            <v-card-title class="indigo white--text">Statement</v-card-title>
-            <v-card-text class="grey lighten-4">
-                 <v-simple-table class="grey lighten-4">
+        
+                 <v-simple-table>
                         <template v-slot:default>
                             <thead>
                                 <tr>
                                     <th>Create date</th>
+                                    <th>identifier</th>
                                     <th>Description</th>
+                                    <th>Source</th>
                                     <th>Flag</th>
                                     <th>Amount</th>
                                 </tr>
@@ -19,8 +19,14 @@
                                      <td>
                                        {{statement.created_at | formatDate}}
                                     </td>
+                                    <td>
+                                       {{statement.identifier}}
+                                    </td>
                                      <td>
                                        {{statement.description}}
+                                    </td>
+                                    <td>
+                                       {{statement.source}}
                                     </td>
                                      <td>
                                        {{statement.flag}}
@@ -37,8 +43,7 @@
                             </tbody>
                         </template>
                     </v-simple-table>
-            </v-card-text>
-        </v-card>
+        
     </div>
 </template>
 <script>

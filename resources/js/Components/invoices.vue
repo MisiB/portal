@@ -1,9 +1,7 @@
 <template>
     <div>
-        <v-card flat class="mt-4">
-            <v-card-title class="indigo white--text">Invoices</v-card-title>
-            <v-card-text class="grey lighten-4">
-                 <v-simple-table class="grey lighten-4">
+        
+                 <v-simple-table>
                         <template v-slot:default>
                             <thead>
                                 <tr>
@@ -30,7 +28,12 @@
                                        {{invoice.invoice_number}}
                                     </td>
                                      <td>
+                                         <div>
                                        {{invoice.category.code}}
+                                         </div>
+                                         <div>
+                                       <small>{{invoice.category.name}}</small>
+                                         </div>
                                     </td>
                                      <td>
                                        {{invoice.year}}
@@ -50,8 +53,7 @@
                             </tbody>
                         </template>
                     </v-simple-table>
-            </v-card-text>
-        </v-card>
+          
          <v-dialog max-width="900" v-model="viewDialog">
              <v-card>
                  <v-card-title><div>Invoice</div><v-spacer/><v-btn icon @click="viewDialog=false"><v-icon>mdi-close</v-icon></v-btn></v-card-title>

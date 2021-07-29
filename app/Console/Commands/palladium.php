@@ -156,8 +156,9 @@ class palladium extends Command
              foreach ($receipts as $key => $value) {
                 
                 $account ="";
-
+                
                 foreach ($ledgers as $ky => $val) {
+
                    if(str_replace(' ', '',$value->description) == str_replace(' ', '',$val->type))
                    {
                       

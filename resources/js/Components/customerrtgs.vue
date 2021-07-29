@@ -1,8 +1,6 @@
 <template>
     <div>
-        <v-card flat class="mt-4">
-            <v-card-title class="indigo white--text">Bank Transfers</v-card-title>
-            <v-card-text class="grey lighten-4">
+        
                 <v-simple-table>
                  <template v-slot:default>
                         <thead>
@@ -32,7 +30,7 @@
                               <td>{{rtg.name}}</td>
                                <td>{{rtg.status}}</td>
                               <td class="d-flex pa-2">
-                                 <v-btn small rounded color="primary" @click="download(rtg.filename)" depressed>Download</v-btn> 
+                                 <v-btn small rounded color="primary" @click="download(rtg.id)" depressed>Download</v-btn> 
                              </td>
                             </tr>
                             </template>
@@ -43,18 +41,17 @@
 
                     </template>
                 </v-simple-table>
-            </v-card-text>
-        </v-card>
+            
     </div>
 </template>
 <script>
 export default {
     props:['rtgs'],
     methods:{
-         download(filename){
-            const url = '/'+filename
-            window.open(url)
-        }
+            download(id){
+            var url= '/DownloadManager/'+id+'/rtgs'
+            window.open(url);
+          }
     }
 }
 </script>

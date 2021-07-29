@@ -185,6 +185,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -832,6 +905,232 @@ var render = function() {
                         ],
                         1
                       )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "mt-4" },
+            [
+              _c(
+                "v-col",
+                {
+                  staticClass: "text-center",
+                  attrs: { md: "4", "offset-md": "4" }
+                },
+                [
+                  _c("div", { staticClass: "display-1" }, [
+                    _vm._v("Banking Details")
+                  ])
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "mt-4" },
+            [
+              _c(
+                "v-col",
+                { attrs: { md: "6", sm: "12", xs: "12" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "grey lighten-3", attrs: { flat: "" } },
+                    [
+                      _c("v-card-title", [_vm._v("Refundable FEEs(USD)")]),
+                      _vm._v(" "),
+                      _c("v-card-text", [
+                        _c("div", { staticClass: "text-h5 text--primary" }, [
+                          _vm._v("BID BONDS only")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v("  CURRENCY: UNITED STATES DOLLARS (USD)")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850128")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: 6101")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: COBZZWHAXXX")])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { attrs: { md: "6", sm: "12", xs: "12" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "grey lighten-3", attrs: { flat: "" } },
+                    [
+                      _c("v-card-title", [_vm._v("Refundable FEEs(ZWL)")]),
+                      _vm._v(" "),
+                      _c("v-card-text", [
+                        _c("div", { staticClass: "text-h5 text--primary" }, [
+                          _vm._v("BID BONDS only")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("  CURRENCY: ZIM DOLLAR (ZWL)")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850118")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: ---")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: ------")])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "mt-4" },
+            [
+              _c(
+                "v-col",
+                { attrs: { md: "6", sm: "12", xs: "12" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "grey lighten-3", attrs: { flat: "" } },
+                    [
+                      _c("v-card-title", [_vm._v("Nonrefundable FEEs(USD)")]),
+                      _vm._v(" "),
+                      _c("v-card-text", [
+                        _c("div", { staticClass: "text-h6 text--primary" }, [
+                          _vm._v(
+                            "REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v("  CURRENCY: UNITED STATES DOLLARS (USD)")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850108")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: 6101")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: COBZZWHAXXX")])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { attrs: { md: "6", sm: "12", xs: "12" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "grey lighten-3", attrs: { flat: "" } },
+                    [
+                      _c("v-card-title", [_vm._v("Nonrefundable FEEs(ZWL)")]),
+                      _vm._v(" "),
+                      _c("v-card-text", [
+                        _c("div", { staticClass: "text-h6 text--primary" }, [
+                          _vm._v(
+                            "REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("  CURRENCY: ZIM DOLLAR (ZWL)")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850020")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: 6101")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: COBZZWHAXXX")])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "mt-4" },
+            [
+              _c(
+                "v-col",
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { color: "success" } },
+                    [
+                      _c("v-card-text", [
+                        _c(
+                          "div",
+                          { staticClass: "d-flex" },
+                          [
+                            _c("div", { staticClass: "text-h5" }, [
+                              _vm._v("Downlod the latest Government Gazette ")
+                            ]),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "primary",
+                                attrs: { href: "./gazzates/file.pdf" }
+                              },
+                              [_vm._v("Download")]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          [
+                            _vm._v(
+                              "Please note the government gazette might not show real time registrations. To access real time  supplier registrations "
+                            ),
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: {
+                                  text: "",
+                                  href: _vm.$route("suppliers")
+                                }
+                              },
+                              [_vm._v("CLICK HERE")]
+                            )
+                          ],
+                          1
+                        )
+                      ])
                     ],
                     1
                   )

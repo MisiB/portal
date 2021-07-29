@@ -100,7 +100,7 @@ class invoicingController extends Controller
     public function destroy($id)
     {
         $status = $this->invoicing->removeItem($id);
-        Log::info($status);
+      
         if($status['status']=='APPROVED' || $status['status']=='PENDING')
         {
             return  redirect()->route('payment')->with('successMessage','Registration successfully completed');
