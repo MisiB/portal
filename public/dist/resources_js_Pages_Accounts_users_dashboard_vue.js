@@ -78,6 +78,124 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/topup.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/topup.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['type'],
+  data: function data() {
+    return {
+      topupDialog: false
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Accounts/users/dashboard.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Accounts/users/dashboard.vue?vue&type=script&lang=js& ***!
@@ -91,6 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_userlayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layouts/userlayout */ "./resources/js/Pages/Layouts/userlayout.vue");
 /* harmony import */ var _Components_bankDetails__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Components/bankDetails */ "./resources/js/Components/bankDetails.vue");
+/* harmony import */ var _Components_topup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Components/topup */ "./resources/js/Components/topup.vue");
 //
 //
 //
@@ -305,15 +424,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['errors', 'successMessage', 'errorMessage', 'data'],
   components: {
     userlayout: _Layouts_userlayout__WEBPACK_IMPORTED_MODULE_0__.default,
-    bankDetails: _Components_bankDetails__WEBPACK_IMPORTED_MODULE_1__.default
+    bankDetails: _Components_bankDetails__WEBPACK_IMPORTED_MODULE_1__.default,
+    topup: _Components_topup__WEBPACK_IMPORTED_MODULE_2__.default
   },
   data: function data() {
     return {
@@ -374,19 +493,19 @@ __webpack_require__.r(__webpack_exports__);
     leadClass: function leadClass() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs':
-          return 'd-flex subtitle-1';
+          return 'd-flex justify-center subtitle-1';
 
         case 'sm':
-          return 'd-flex subtitle-1';
+          return 'd-flex justify-center subtitle-1';
 
         case 'md':
-          return 'd-flex subtitle-1';
+          return 'd-flex justify-center subtitle-1';
 
         case 'lg':
-          return 'd-flex headline';
+          return 'd-flex justify-center headline';
 
         case 'xl':
-          return 'd-flex body-1';
+          return 'd-flex justify-center body-1';
       }
     },
     countAwaiting: function countAwaiting() {
@@ -722,6 +841,45 @@ component.options.__file = "resources/js/Components/bankDetails.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Components/topup.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/Components/topup.vue ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _topup_vue_vue_type_template_id_d9fcf8d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./topup.vue?vue&type=template&id=d9fcf8d6& */ "./resources/js/Components/topup.vue?vue&type=template&id=d9fcf8d6&");
+/* harmony import */ var _topup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./topup.vue?vue&type=script&lang=js& */ "./resources/js/Components/topup.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _topup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _topup_vue_vue_type_template_id_d9fcf8d6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _topup_vue_vue_type_template_id_d9fcf8d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/topup.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Accounts/users/dashboard.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/Pages/Accounts/users/dashboard.vue ***!
@@ -818,6 +976,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/topup.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/Components/topup.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_topup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./topup.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/topup.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_topup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Accounts/users/dashboard.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************!*\
   !*** ./resources/js/Pages/Accounts/users/dashboard.vue?vue&type=script&lang=js& ***!
@@ -876,6 +1050,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bankDetails_vue_vue_type_template_id_f892f6ea___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bankDetails_vue_vue_type_template_id_f892f6ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./bankDetails.vue?vue&type=template&id=f892f6ea& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/bankDetails.vue?vue&type=template&id=f892f6ea&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/topup.vue?vue&type=template&id=d9fcf8d6&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/Components/topup.vue?vue&type=template&id=d9fcf8d6& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_topup_vue_vue_type_template_id_d9fcf8d6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_topup_vue_vue_type_template_id_d9fcf8d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_topup_vue_vue_type_template_id_d9fcf8d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./topup.vue?vue&type=template&id=d9fcf8d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/topup.vue?vue&type=template&id=d9fcf8d6&");
 
 
 /***/ }),
@@ -1114,6 +1305,309 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/topup.vue?vue&type=template&id=d9fcf8d6&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/topup.vue?vue&type=template&id=d9fcf8d6& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "span",
+    [
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c(
+                "v-btn",
+                {
+                  staticClass: "white--text",
+                  attrs: { block: "", depressed: "", small: "", text: "" },
+                  on: {
+                    click: function($event) {
+                      _vm.topupDialog = true
+                    }
+                  }
+                },
+                [_vm._v("How to top up")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { "max-width": "600" },
+          model: {
+            value: _vm.topupDialog,
+            callback: function($$v) {
+              _vm.topupDialog = $$v
+            },
+            expression: "topupDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-card-title",
+                [
+                  _c("div", [_vm._v("How to top up")]),
+                  _c("v-spacer"),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.topupDialog = false
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("mdi-close")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _vm.type == "zwl_nonrefundable"
+                  ? _c(
+                      "div",
+                      [
+                        _c("div", { staticClass: "font-bold" }, [
+                          _vm._v(
+                            "This wallet can be use to settle the following:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ol", [
+                          _c("li", [_vm._v(" SUPPLIER REGISTRATIONS ")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v(" BID ESTABLISHMENT FEES")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("SPOC FEES")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("TRAINING FEES")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("CONTRACT FEES")])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-alert",
+                          {
+                            attrs: {
+                              border: "top",
+                              color: "red lighten-2",
+                              dark: ""
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                           Please note when making a bank transfer enter  your PR number only on the description for your transfer\n                           "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "headline mt-4" }, [
+                          _vm._v("Banking Details")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("  CURRENCY: ZIM DOLLAR (ZWL)")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850020")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: 6101")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: COBZZWHAXXX")])
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.type == "usd_nonrefundable"
+                  ? _c(
+                      "div",
+                      [
+                        _c("div", { staticClass: "font-bold" }, [
+                          _vm._v(
+                            "This wallet can be use to settle the following:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ol", [
+                          _c("li", [_vm._v(" SUPPLIER REGISTRATIONS ")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v(" BID ESTABLISHMENT FEES")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("SPOC FEES")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("TRAINING FEES")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("CONTRACT FEES")])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-alert",
+                          {
+                            attrs: {
+                              border: "top",
+                              color: "red lighten-2",
+                              dark: ""
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                           Please note when making a bank transfer enter  your PR number only on the description for your transfer\n                           "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "headline mt-4" }, [
+                          _vm._v("Banking Details")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v("  CURRENCY: UNITED STATES DOLLARS (USD)")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850108")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: 6101")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: COBZZWHAXXX")]),
+                        _vm._v(">\n                     ")
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.type == "usd_refundable"
+                  ? _c(
+                      "div",
+                      [
+                        _c("div", { staticClass: "font-bold" }, [
+                          _vm._v(
+                            "This wallet can be use to settle the following:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ol", [_c("li", [_vm._v(" BID BOND ONLY")])]),
+                        _vm._v(" "),
+                        _c(
+                          "v-alert",
+                          {
+                            attrs: {
+                              border: "top",
+                              color: "red lighten-2",
+                              dark: ""
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                           Please note when making a bank transfer enter  your PR number only on the description for your transfer\n                           "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "headline mt-4" }, [
+                          _vm._v("Banking Details")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v("  CURRENCY: UNITED STATES DOLLARS (USD)")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850128")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: 6101")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: COBZZWHAXXX")])
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.type == "zwl_refundable"
+                  ? _c(
+                      "div",
+                      [
+                        _c("div", { staticClass: "font-bold" }, [
+                          _vm._v(
+                            "This wallet can be use to settle the following:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ol", [_c("li", [_vm._v(" BID BOND ONLY")])]),
+                        _vm._v(" "),
+                        _c(
+                          "v-alert",
+                          {
+                            attrs: {
+                              border: "top",
+                              color: "red lighten-2",
+                              dark: ""
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                           Please note when making a bank transfer enter  your PR number only on the description for your transfer\n                           "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "headline mt-4" }, [
+                          _vm._v("Banking Details")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("  CURRENCY: ZIM DOLLAR (ZWL)")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850118")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("BRANCH SORT CODE: ---")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("SWIFT CODE: ------")])
+                      ],
+                      1
+                    )
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Accounts/users/dashboard.vue?vue&type=template&id=cbecdc66&scoped=true&":
 /*!*******************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Accounts/users/dashboard.vue?vue&type=template&id=cbecdc66&scoped=true& ***!
@@ -1224,26 +1718,22 @@ var render = function() {
                 [
                   _c(
                     "v-card",
-                    { attrs: { flat: "" } },
+                    {
+                      staticClass: "light-blue rounded-none",
+                      attrs: { flat: "" }
+                    },
                     [
                       _c(
+                        "v-card-title",
+                        { staticClass: "rounded-none d-flex justify-center" },
+                        [_c("div", [_vm._v("Nonrefundable wallet")])]
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "v-card-text",
-                        { staticClass: "d-flex" },
+                        { staticClass: "text-center" },
                         [
-                          _c(
-                            "div",
-                            { staticClass: "pb-2 pt-2" },
-                            [
-                              _c("v-icon", { attrs: { "x-large": "" } }, [
-                                _vm._v("mdi-wallet")
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c("div", [
+                          _c("div", { staticClass: "text-center" }, [
                             _c("div", { class: _vm.leadClass }, [
                               _c("div", { staticClass: "mr-2" }, [
                                 _vm._v("ZWL")
@@ -1253,10 +1743,10 @@ var render = function() {
                                   _vm._s(_vm.data.zwl_nonrefundable_balance)
                                 )
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [_vm._v("Nonrefundable wallet")])
-                          ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("topup", { attrs: { type: "zwl_nonrefundable" } })
                         ],
                         1
                       )
@@ -1273,26 +1763,22 @@ var render = function() {
                 [
                   _c(
                     "v-card",
-                    { attrs: { flat: "" } },
+                    {
+                      staticClass: "red accent-2 rounded-none",
+                      attrs: { flat: "" }
+                    },
                     [
                       _c(
+                        "v-card-title",
+                        { staticClass: "rounded-none d-flex justify-center" },
+                        [_c("div", [_vm._v("Nonrefundable wallet")])]
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "v-card-text",
-                        { staticClass: "d-flex" },
+                        { staticClass: "text-center" },
                         [
-                          _c(
-                            "div",
-                            { staticClass: "pt-2 pb-2" },
-                            [
-                              _c("v-icon", { attrs: { "x-large": "" } }, [
-                                _vm._v("mdi-wallet")
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c("div", [
+                          _c("div", { staticClass: "text-center" }, [
                             _c("div", { class: _vm.leadClass }, [
                               _c("div", { staticClass: "mr-2" }, [
                                 _vm._v("USD")
@@ -1302,10 +1788,10 @@ var render = function() {
                                   _vm._s(_vm.data.usd_nonrefundable_balance)
                                 )
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [_vm._v("Nonrefundable wallet")])
-                          ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("topup", { attrs: { type: "usd_nonrefundable" } })
                         ],
                         1
                       )
@@ -1322,26 +1808,19 @@ var render = function() {
                 [
                   _c(
                     "v-card",
-                    { attrs: { flat: "" } },
+                    { staticClass: "indigo rounded-none", attrs: { flat: "" } },
                     [
                       _c(
+                        "v-card-title",
+                        { staticClass: "rounded-none d-flex justify-center" },
+                        [_c("div", [_vm._v("Refundable wallet")])]
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "v-card-text",
-                        { staticClass: "d-flex" },
+                        { staticClass: "text-center" },
                         [
-                          _c(
-                            "div",
-                            { staticClass: "pt-2 pb-2" },
-                            [
-                              _c("v-icon", { attrs: { "x-large": "" } }, [
-                                _vm._v("mdi-wallet")
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c("div", [
+                          _c("div", { staticClass: "text-center" }, [
                             _c("div", { class: _vm.leadClass }, [
                               _c("div", { staticClass: "mr-2" }, [
                                 _vm._v("ZWL")
@@ -1349,10 +1828,10 @@ var render = function() {
                               _c("div", [
                                 _vm._v(_vm._s(_vm.data.zwl_refundable_balance))
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [_vm._v("Refundable wallet")])
-                          ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("topup", { attrs: { type: "zwl_refundable" } })
                         ],
                         1
                       )
@@ -1365,30 +1844,26 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-col",
-                { attrs: { cols: "6", md: "3" } },
+                { attrs: { md3: "", sm12: "" } },
                 [
                   _c(
                     "v-card",
-                    { attrs: { flat: "" } },
+                    {
+                      staticClass: "green lighten-1 rounded-none",
+                      attrs: { flat: "" }
+                    },
                     [
                       _c(
+                        "v-card-title",
+                        { staticClass: "rounded-none d-flex justify-center" },
+                        [_c("div", [_vm._v("Refundable wallet")])]
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "v-card-text",
-                        { staticClass: "d-flex" },
+                        { staticClass: "text-center" },
                         [
-                          _c(
-                            "div",
-                            { staticClass: "pa-2" },
-                            [
-                              _c("v-icon", { attrs: { "x-large": "" } }, [
-                                _vm._v("mdi-wallet")
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c("div", [
+                          _c("div", { staticClass: "text-center" }, [
                             _c("div", { class: _vm.leadClass }, [
                               _c("div", { staticClass: "mr-2" }, [
                                 _vm._v("USD")
@@ -1396,12 +1871,10 @@ var render = function() {
                               _c("div", [
                                 _vm._v(_vm._s(_vm.data.usd_refundable_balance))
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "text-sm" }, [
-                              _vm._v("Refundable Wallet")
                             ])
-                          ])
+                          ]),
+                          _vm._v(" "),
+                          _c("topup", { attrs: { type: "usd_refundable" } })
                         ],
                         1
                       )

@@ -155,12 +155,13 @@ class palladium extends Command
              foreach ($receipts as $key => $value) {
                 
                 $account ="";
-
+                
                 foreach ($ledgers as $ky => $val) {
-                   
+                     
                    if($value->description == $val->type)
                    {
                        $account = $val->account;
+                       break;
                    }
                 }
                

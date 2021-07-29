@@ -37,7 +37,7 @@ class awaitingTenderInvoicesRepository{
     }
 
     public function getItem($id){
-        $invoice = tender_invoice::with('currency','rtgs','receipts')->whereid($id)->wherestatus('AWAITING')->first();
+        $invoice = tender_invoice::with('currency','rtgs','receipts')->whereid($id)->first();
         $total =  $invoice->amount;
         $receipts = $invoice->receipts;
         $currency = $invoice->currency->name;

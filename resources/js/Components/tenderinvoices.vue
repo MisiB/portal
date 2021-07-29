@@ -6,49 +6,49 @@
                             <thead>
                                 <tr>
                                     <th>Create date</th>
-                                    <th>identifier</th>
+                                    <th>Invoice Number</th>
+                                    <th>Tender Number</th>
                                     <th>Description</th>
-                                    <th>Source</th>
-                                    <th>Flag</th>
                                     <th>Amount</th>
+                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <template v-if="statements.length >0">
-                                <tr v-for="statement in statements" :key="statement.id" :class="statement.flag">
+                                <template v-if="invoices.length >0">
+                                <tr v-for="invoice in invoices" :key="invoice.id">
                                      <td>
-                                       {{statement.created_at | formatDate}}
+                                       {{invoice.created_at | formatDate}}
                                     </td>
                                     <td>
-                                       {{statement.identifier}}
+                                       {{invoice.invoice_number}}
                                     </td>
                                      <td>
-                                       {{statement.description}}
+                                       {{invoice.tendernumber}}
                                     </td>
                                     <td>
-                                       {{statement.source}}
+                                       {{invoice.description}}
                                     </td>
-                                     <td>
-                                       {{statement.flag}}
+                                    <td>
+                                        {{invoice.amount}}
                                     </td>
-                                     <td>
-                                       {{statement.currency}}
-                                       {{statement.amount}}
+                                    <td>
+                                        {{invoice.status}}
                                     </td>
+                                     
                                 </tr>
                                 </template>
                                 <template v-else>
-                                  <tr><td colspan="6" class="pa-5 text-center red--text"> No Statement Found</td></tr>
+                                  <tr><td colspan="6" class="pa-5 text-center red--text"> No Tender invoices Found</td></tr>
                                 </template>
                             </tbody>
                         </template>
                     </v-simple-table>
-        
+           
     </div>
 </template>
 <script>
 export default {
-    props:['statements']
+    props:['invoices']
 }
 </script>
 <style scoped>

@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\nonrefundable_invoices;
 use Maatwebsite\Excel\Concerns\FromArray;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class invoicesReport implements FromArray
+class invoicesReport implements FromArray,WithHeadings
 {
     
     private $from;
@@ -17,6 +18,17 @@ class invoicesReport implements FromArray
         $this->from = $from;
         $this->to = $to;
         $this->currency = $currency; 
+    }
+    public function headings(): array
+    {
+      return [
+        'DATE',
+        'COMPANY_REG',
+        'INVOICE_NUMBER',      
+        'CATEGORY',        
+        'CURRENCY', 
+        'COST'
+    ];
     }
     public function array(): array
     {

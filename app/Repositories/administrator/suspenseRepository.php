@@ -17,4 +17,33 @@ class suspenseRepository{
 
         return suspense::whereid($id)->first();
     }
+
+    public function  movefunds($accountnumber)
+    {
+        
+    }
+
+    public function getBalance($id,$accountnumber)
+    {
+        $suspense = suspense::with('suspenseReceipts')->wherecompany_id($id)->whereaccountnumber($accountnumber)->get();
+         $total_deposited =  count($suspense)>0 ? $suspense->sum('amount') : 0;
+
+         $total_receipted=0;
+
+         if(count($suspense)>0)
+         {
+            foreach ($suspense as $key => $value) {
+                 $receipted =  count($value->suspenseReceipts)>0 ? $value->suspenseReceipts->sum('amount') : 0;
+                 if($value->amount == $receipted){
+
+                     $value->status ='UTILIZED';
+                     $value->save();
+                 }
+                 $total_receipted = $total_receipted + $receipted;
+            }
+         }
+
+         return $total_deposited -$total_receipted;
+    
+    }
 }

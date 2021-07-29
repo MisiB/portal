@@ -59,7 +59,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                             $receiptnumber = $HELPER->get_receipt_number();
                             $amount = $balance > $suspense_balance ? $suspense_balance : $balance;
                            
-                             $suspensedata = suspense::wherecompany_id($company->id)->whereaccountnumber($accountnumber)->wherestatus('PENDING')->get();
+                             $suspensedata = suspense::wherecompany_id($company->id)->whereIn('accountnumber',$accountnumber)->wherestatus('PENDING')->get();
                               if(count($suspensedata)>0)
                               {
                                   foreach ($suspensedata as $key => $value) {
@@ -160,7 +160,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                              $receiptnumber = $HELPER->get_receipt_number();
                              $amount = $balance > $suspense_balance ? $suspense_balance : $balance;
                             
-                              $suspensedata = suspense::wherecompany_id($company->id)->whereaccountnumber($accountnumber)->wherestatus('PENDING')->get();
+                              $suspensedata = suspense::wherecompany_id($company->id)->whereIn('accountnumber',$accountnumber)->wherestatus('PENDING')->get();
                                if(count($suspensedata)>0)
                                {
                                    foreach ($suspensedata as $key => $value) {
@@ -255,6 +255,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                 $suspense_balance = 0;
                 if(count($accountnumber)>0)
                       {
+                         
                         for ($i=0; $i < count($accountnumber); $i++) { 
                           $suspense_balance = $suspense_balance+$suspense->getBalance($company,$accountnumber[$i]['accountnumber']);
                         }
@@ -263,7 +264,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                              $receiptnumber = $HELPER->get_receipt_number();
                              $amount = $balance > $suspense_balance ? $suspense_balance : $balance;
                             
-                              $suspensedata = suspense::wherecompany_id($company->id)->whereaccountnumber($accountnumber)->wherestatus('PENDING')->get();
+                              $suspensedata = suspense::wherecompany_id($company->id)->whereIn('accountnumber',$accountnumber)->wherestatus('PENDING')->get();
                                if(count($suspensedata)>0)
                                {
                                    foreach ($suspensedata as $key => $value) {
@@ -357,7 +358,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
           if(count($invoices)>0){
          
                   $accountnumber = $HELPER->getAccountNumber($company,$invoices[0]->currency->name,$type);
-                  $suspensedata = suspense::wherecompany_id($company->id)->whereaccountnumber($accountnumber)->wherestatus('PENDING')->get();
+                  $suspensedata = suspense::wherecompany_id($company->id)->whereIn('accountnumber',$accountnumber)->wherestatus('PENDING')->get();
                   foreach ($suspensedata as $key => $value)
                    {
                     

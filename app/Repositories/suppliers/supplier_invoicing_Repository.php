@@ -104,7 +104,7 @@ class supplier_invoicing_Repository implements \App\Interfaces\suppliers\supplie
              * check if invoice was settled
              */
              $helper->check_invoice_settlement($invoice->invoice_number,Auth::user()->email);
-             $data  = nonrefundable_invoices::whereinvoice_number($invoice->invoice_number)->wherestatus('PENDING')->get();
+             $data  = nonrefundable_invoices::whereinvoice_number($invoice->invoice_number)->whereIn('status',['PENDING','AWAITING'])->get();
              $total_receipted = count($data[0]->receipts)>0 ? $data[0]->receipts->sum('amount') : 0;          
              $total_invoiced = count($data)>0 ? $data->sum('cost') : 0;
              //$status = $this->check_invoice_status($invoice->invoice_number);

@@ -6,49 +6,45 @@
                             <thead>
                                 <tr>
                                     <th>Create date</th>
-                                    <th>identifier</th>
-                                    <th>Description</th>
                                     <th>Source</th>
-                                    <th>Flag</th>
+                                    <th>Accountnumber</th>
                                     <th>Amount</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <template v-if="statements.length >0">
-                                <tr v-for="statement in statements" :key="statement.id" :class="statement.flag">
+                                <template v-if="suspenses.length >0">
+                                <tr v-for="suspense in suspenses" :key="suspense.id">
                                      <td>
-                                       {{statement.created_at | formatDate}}
+                                       {{suspense.created_at | formatDate}}
                                     </td>
                                     <td>
-                                       {{statement.identifier}}
+                                       {{suspense.source}}
                                     </td>
                                      <td>
-                                       {{statement.description}}
+                                       {{suspense.accountnumber}}
                                     </td>
                                     <td>
-                                       {{statement.source}}
+                                       {{suspense.currency}}{{suspense.amount}}
                                     </td>
-                                     <td>
-                                       {{statement.flag}}
+                                    <td>
+                                        {{suspense.status}}
                                     </td>
-                                     <td>
-                                       {{statement.currency}}
-                                       {{statement.amount}}
-                                    </td>
+                                     
                                 </tr>
                                 </template>
                                 <template v-else>
-                                  <tr><td colspan="6" class="pa-5 text-center red--text"> No Statement Found</td></tr>
+                                  <tr><td colspan="5" class="pa-5 text-center red--text"> No Suspense Statement Found</td></tr>
                                 </template>
                             </tbody>
                         </template>
                     </v-simple-table>
-        
+           
     </div>
 </template>
 <script>
 export default {
-    props:['statements']
+    props:['suspenses']
 }
 </script>
 <style scoped>

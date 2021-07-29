@@ -5,8 +5,9 @@ namespace App\Exports;
 use App\Models\nonrefundable_invoices;
 use App\Repositories\administrator\suspenseRepository;
 use Maatwebsite\Excel\Concerns\FromArray;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class receiptReport implements FromArray
+class receiptReport implements FromArray,WithHeadings
 {
     private $from;
     private $to;
@@ -17,6 +18,17 @@ class receiptReport implements FromArray
         $this->to = $to;
         $this->currency = $currency;
          
+    }
+    public function headings(): array
+    {
+      return [
+        'DATE',
+        'INVOICE_NUMBER',
+        'RECEIPT_NUMBER',             
+        'METHOD',        
+        'CURRENCY', 
+        'AMOUNT'
+    ];
     }
     public function array():array
     {

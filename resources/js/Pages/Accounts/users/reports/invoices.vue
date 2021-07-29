@@ -43,13 +43,18 @@
                                    <tr v-for="inv in invoices" :key="inv.id" class="pt-2 pb-2">
                                        <td>{{inv.created_at | formatDate}}</td>
                                        <td>{{inv.invoice_number}}</td>
-                                       <td>{{inv.category.name}}</td>
+                                       <td>
+                                           <div>{{inv.category.code}}</div>
+                                           <div><small>{{inv.category.name}}</small></div>
+                                        </td>
                                        <td>{{inv.currency.name}}{{inv.cost}}</td>
                                        <td>{{inv.status}}</td>
-                                       <td class="d-flex">                                           
-                                           <v-btn color="green" depressed class="white--text mt-1" small link :href="$route('Invoicing.show',inv.invoice_number)" v-if="inv.status !='CANCELLED'">Print Invoice</v-btn>
-                                           <v-btn color="blue" depressed class="white--text mt-1 mb-1" small link :href="$route('reportInvoices.show',inv.invoice_number)">Check</v-btn>
-                                            <v-btn  depressed v-if="inv.receipts.length >0" small class="mt-1 mb-1 ml-2" link :href="$route('reportReceipts.show',inv.invoice_number)">Print receipts</v-btn>
+                                       <td class="d-flex"> 
+                                            <v-btn color="error" depressed class="white--text mt-1 ml-1" small @click="cancelInvoice(inv.id)" :loading="loading" :disabled="loading" v-if="inv.status =='AWAITING'">CANCEL</v-btn>
+                                                                                   
+                                           <v-btn color="green" depressed class="white--text mt-1 ml-1" small link :href="$route('Invoicing.show',inv.invoice_number)" v-if="inv.status !='CANCELLED'">Print</v-btn>
+                                           <v-btn color="blue" depressed class="white--text mt-1 mb-1 ml-1" small link :href="$route('reportInvoices.show',inv.invoice_number)">Check</v-btn>
+                                            <v-btn  depressed v-if="inv.receipts.length >0" small class="mt-1 mb-1 ml-1" link :href="$route('reportReceipts.show',inv.invoice_number)">Print receipts</v-btn>
                                        </td>
                                    </tr>
                                </template>
@@ -108,6 +113,7 @@
 </template>
 <script>
 import  userlayout  from '../../../Layouts/userlayout'
+import Vue from 'vue'
 export  default {
     props: ['errors','successMessage','errorMessage','user','invoices'],
     components: {
@@ -123,6 +129,34 @@ export  default {
       openReceipts(receipts){
           this.receiptModel = true
           this.receipts = receipts
+      },cancelInvoice(id){
+           Vue.swal({
+                    title: 'Are you sure?',
+                    text: "You want to Cancel Invoice ",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Cancel'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.loading= true
+                       this.$inertia.delete(this.$route('reportInvoices.destroy',id),{
+                            onSuccess:(page)=>{
+                                if(this.successMessage){
+                                    Vue.swal('Success',this.successMessage,'success')
+                                }
+                                if(this.errorMessage){
+                                    Vue.swal('Error',this.errorMessage,'error')
+                                }
+                            }
+                        })
+                    
+                    }else{
+                        this.loading = false
+                    }
+                 }) 
+           
       }
 
     }

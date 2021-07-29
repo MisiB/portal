@@ -60,10 +60,16 @@ class company extends Model
         return $this->hasMany(mybidbonds::class,'company_id','id');
     }
 
+    public function suspense(){
+        return $this->hasMany(suspense::class,'company_id','id');
+    }
+
     public function invoices(){
         return $this->hasMany(tender_invoice::class,'company_id','id');
     }
-
+    public function tenderinvoices(){
+        return $this->hasMany(tender_invoice::class,'company_id','id');
+    }
     public function documentcomments(){
         return $this->hasMany(company_document_comment::class,'company_id','id');
     }

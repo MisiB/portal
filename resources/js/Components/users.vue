@@ -1,15 +1,12 @@
 <template>
     <div>
-        <v-card flat class="mt-4" >
-            <v-card-title class="indigo">
-                <div class="white--text">Users</div>
-                <v-spacer/>
-                <v-btn icon class="white--text" @click="createModel=true">
+       <div>
+            <v-spacer/>
+                <v-btn fab class="primary mb-2" @click="createModel=true">
                     <v-icon>mdi-plus</v-icon>
                 </v-btn>
-                </v-card-title>
-            <v-card-text class="grey lighten-4">
-                 <v-simple-table class="grey lighten-4">
+       </div>
+                 <v-simple-table>
                         <template v-slot:default>
                             <thead>
                                 <tr>
@@ -33,8 +30,7 @@
                                        {{user.status}}
                                     </td>
                                      <td class="d-flex pa-2">
-                                        <v-btn small rounded color="info" depressed @click="editShow(user)">Edit</v-btn>
-                                          <v-btn small rounded color="success" depressed @click="resetpassword(user.id)">reset</v-btn>
+                                               <v-btn small rounded color="success" depressed @click="resetpassword(user.id)">reset</v-btn>
                                     </td>
                                 </tr>
                                 </template>
@@ -44,8 +40,7 @@
                             </tbody>
                         </template>
                     </v-simple-table>
-            </v-card-text>
-        </v-card>
+        
         <v-dialog v-model="createModel" max-width="600">
             <v-card>
                 <v-card-title>User Management</v-card-title>
