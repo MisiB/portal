@@ -150,6 +150,7 @@ class palladium extends Command
           
 
         $receipts =  receipts::whereposted(0)->get();
+        
         if(count($receipts)>0){
             $receiptsarray=[];
              foreach ($receipts as $key => $value) {
@@ -157,11 +158,13 @@ class palladium extends Command
                 $account ="";
 
                 foreach ($ledgers as $ky => $val) {
-                   
-                   if($value->description == $val->type)
+                   if(str_replace(' ', '',$value->description) == str_replace(' ', '',$val->type))
                    {
+                      
                        $account = $val->account;
+                       break;
                    }
+
                 }
                
                 if($account !="")

@@ -59,7 +59,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                             $receiptnumber = $HELPER->get_receipt_number();
                             $amount = $balance > $suspense_balance ? $suspense_balance : $balance;
                            
-                             $suspensedata = suspense::wherecompany_id($company->id)->whereaccountnumber($accountnumber)->wherestatus('PENDING')->get();
+                             $suspensedata = suspense::wherecompany_id($company->id)->whereIn('accountnumber',$accountnumber)->wherestatus('PENDING')->get();
                               if(count($suspensedata)>0)
                               {
                                   foreach ($suspensedata as $key => $value) {
@@ -263,7 +263,7 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                              $receiptnumber = $HELPER->get_receipt_number();
                              $amount = $balance > $suspense_balance ? $suspense_balance : $balance;
                             
-                              $suspensedata = suspense::wherecompany_id($company->id)->whereaccountnumber($accountnumber)->wherestatus('PENDING')->get();
+                              $suspensedata = suspense::wherecompany_id($company->id)->whereIn('accountnumber',$accountnumber)->wherestatus('PENDING')->get();
                                if(count($suspensedata)>0)
                                {
                                    foreach ($suspensedata as $key => $value) {

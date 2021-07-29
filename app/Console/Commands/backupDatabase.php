@@ -39,7 +39,7 @@ class backupDatabase extends Command
     {
         $filename = "backup-" . Carbon::now()->format('Y-m-d') . ".gz";
 
-        $command = "mysqldump --user=root --password=Praz@2019 --host=127.0.0.1  praz-app-db | gzip >  " . storage_path() . "/app/backup/" . $filename;
+        $command = "mysqldump --user=root --password=Praz@2019 --host=127.0.0.1  prazappdb | gzip >  " . storage_path() . "/app/backup/" . $filename;
   
         $returnVar = NULL;
         $output  = NULL;
