@@ -248,16 +248,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -1168,13 +1158,7 @@ var render = function() {
                                   return [
                                     _c("thead", [
                                       _c("tr", [
-                                        _c("th", [_vm._v("Title")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Closing Date")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Active Status")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Status")]),
+                                        _c("th", [_vm._v("Notie")]),
                                         _vm._v(" "),
                                         _c("th")
                                       ])
@@ -1192,45 +1176,54 @@ var render = function() {
                                                 { key: notice.id },
                                                 [
                                                   _c("td", [
-                                                    _vm._v(
-                                                      "\n                                  " +
-                                                        _vm._s(notice.title) +
-                                                        "\n                              "
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("td", [
-                                                    _vm._v(
-                                                      "\n                                  " +
-                                                        _vm._s(
-                                                          notice.close_date
-                                                        ) +
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass: "headline"
+                                                      },
+                                                      [
+                                                        _c("b", [
+                                                          _vm._v("Title:")
+                                                        ]),
+                                                        _vm._v(
+                                                          "  " +
+                                                            _vm._s(notice.title)
+                                                        )
+                                                      ]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c("div", [
+                                                      _c("b", [
+                                                        _vm._v("Closing Date:")
+                                                      ]),
+                                                      _vm._v(
                                                         " " +
-                                                        _vm._s(
-                                                          notice.close_time
-                                                        ) +
-                                                        "\n                              "
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("td", [
-                                                    _vm._v(
-                                                      "\n                                  " +
-                                                        _vm._s(notice.active) +
-                                                        "\n                              "
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("td", [
-                                                    _vm._v(
-                                                      "\n                                  " +
-                                                        _vm._s(notice.status) +
-                                                        " \n                              "
-                                                    )
+                                                          _vm._s(
+                                                            notice.close_date
+                                                          ) +
+                                                          " " +
+                                                          _vm._s(
+                                                            notice.close_time
+                                                          )
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("div", [
+                                                      _c("b", [
+                                                        _vm._v("Active:")
+                                                      ]),
+                                                      _vm._v(
+                                                        " " +
+                                                          _vm._s(notice.active)
+                                                      )
+                                                    ])
                                                   ]),
                                                   _vm._v(" "),
                                                   _c(
                                                     "td",
+                                                    {
+                                                      staticClass: "text-right"
+                                                    },
                                                     [
                                                       _c(
                                                         "inertia-link",
@@ -1259,7 +1252,7 @@ var render = function() {
                                                   {
                                                     staticClass:
                                                       "pa-5 text-center red--text",
-                                                    attrs: { colspan: "4" }
+                                                    attrs: { colspan: "2" }
                                                   },
                                                   [
                                                     _vm._v(

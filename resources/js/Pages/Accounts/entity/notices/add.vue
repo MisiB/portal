@@ -8,8 +8,8 @@
                     </div>
                 </v-card-text>
             </v-card> 
-        
-            <v-row class="mt-4">
+
+   <v-row class="mt-4">
                 <v-col>              
              <v-card flat >
                  <v-card-title>
@@ -28,76 +28,8 @@
                             >
                          </v-text-field>
                         </v-col>
-                         <v-col>
-                        <v-text-field
-                            v-model="form.limit"
-                            label="Participation Limit"
-                            outlined
-                            :error-messages="errors.limit"
-                            >
-                         </v-text-field>
-                        </v-col>
-                        </v-row>
-                    <v-row>
-                       
-                         <v-col>
-                        <v-text-field
-                            v-model="form.close_date"
-                            label="Closing Date"
-                            type="date"
-                            outlined
-                            :error-messages="errors.close_date"
-                            >
-                         </v-text-field>
-                        </v-col>
-                         <v-col>
-                        <v-text-field
-                            v-model="form.close_time"
-                            label="Closing time"
-                            type="time"
-                            outlined
-                            :error-messages="errors.close_time"
-                            >
-                         </v-text-field>
-                        </v-col>
-                    </v-row>
-                    <v-row>
-                         <v-col>
+                          <v-col>
                         <v-select
-                            v-model="form.currency"
-                            :items="currency"
-                            item-text="name"
-                            item-value="id"
-                            label="Currency of trade"                            
-                            outlined
-                            :error-messages="errors.currency"
-                            >
-                        </v-select>
-                        </v-col>
-                        <v-col>
-                           
-                        <v-text-field
-                            v-model="form.bidvalue"
-                            label="Estimate Bid value"
-                            outlined
-                            :error-messages="errors.bidvalue"
-                            >
-                         </v-text-field>
-                        </v-col>
-                    </v-row>
-                      <v-row>
-                         <v-col>
-                        <v-select
-                            v-model="form.noticetype"
-                            :items="clienttypes"
-                            label="Notice type"                            
-                            outlined
-                            :error-messages="errors.noticetype"
-                            >
-                        </v-select>
-                        </v-col>
-                        <v-col>
-                            <v-select
                             v-model="form.procurementtype"
                             :items="procurementtypes"
                             item-text="name"
@@ -108,26 +40,39 @@
                             >
                         </v-select>
                         </v-col>
-                    </v-row>
-                      <v-row v-if="form.procurementtype=='2'">                     
+                        </v-row>
+                          <v-row v-if="form.procurementtype=='2'">                     
                         <v-col>
                             <v-radio-group
-                            v-model="bondcheck"
+                            v-model="require_bid_bond"
                             row
                             >
                             <v-radio
-                                label="Yes we require Bid Security"
+                                label="Yes we require Bid Bond"
                                 value="Y"
                             ></v-radio>
                             <v-radio
-                                label="No we do not require Bid Security"
+                                label="No we do not require Bid Bond"
                                 value="N"
                             ></v-radio>
                             </v-radio-group>
                         </v-col>
-                      
+                     
                     </v-row>
-                    <v-row  v-if="bondcheck=='Y'">
+                         
+                                 <v-row  v-if="require_bid_bond=='Y'">
+                                        <v-col>
+                        <v-select
+                            v-model="form.currency"
+                            :items="currency"
+                            item-text="name"
+                            item-value="id"
+                            label="Currency"                            
+                            outlined
+                            :error-messages="errors.currency"
+                            >
+                        </v-select>
+                        </v-col>
                         <v-col>                           
                             <v-text-field                         
                             v-model="form.bidsecurity"
@@ -148,26 +93,34 @@
                             </v-select>                      
                        </v-col>
                     </v-row>
-                    <v-row>
-                           <v-col>
-                            <v-select                        
-                            v-model="form.classification"
-                            label="Classification"
-                            :items="classifications"
-                            item-text="name"
-                            item-value="id"
+                       <v-row>
+                         <v-col>
+                        <v-text-field
+                            v-model="form.close_date"
+                            label="Closing Date"
+                            type="date"
                             outlined
-                            :error-messages="errors.classification"
+                            :error-messages="errors.close_date"
                             >
-                            </v-select>   
+                         </v-text-field>
                         </v-col>
-                        <v-col>
+                         <v-col>
+                        <v-text-field
+                            v-model="form.close_time"
+                            label="Closing time"
+                            type="time"
+                            outlined
+                            :error-messages="errors.close_time"
+                            >
+                         </v-text-field>
+                        </v-col>
+             </v-row>
+               <v-row>
+                          <v-col>
                              <v-file-input
                         show-size
                         counter
-                        outlined
                         label="Attach SBD Document"
-                         prepend-icon="mdi-paperclip"
                         accept=".pdf"
                         v-model="form.filename"
                         :error-messages="errors.filename"
@@ -175,68 +128,7 @@
                     </v-file-input>
                         </v-col>
                     </v-row>
-                    <v-row>                     
-                        <v-col>
-                            <v-radio-group
-                            v-model="sitevisitcheck"
-                            row
-                            >
-                            <v-radio
-                                label="Yes we require site visit"
-                                value="Y"
-                            ></v-radio>
-                            <v-radio
-                                label="No we do not require site visit"
-                                value="N"
-                            ></v-radio>
-                            </v-radio-group>
-                        </v-col>
-                     
-                    </v-row>
-                    <v-row v-if="sitevisitcheck=='Y'">                     
-                        <v-col>
-                            <v-text-field
-                            v-model="form.sitevisitlocation"
-                            label="Site visit location"
-                            outlined
-                            :error-messages="errors.sitevisitlocation"
-                            >
-                         </v-text-field>
-                        </v-col>
-                        <v-col>
-                             <v-text-field
-                            v-model="form.site_visit_date"
-                            label="Site Visit Date"
-                            type="date"
-                            outlined
-                            :error-messages="errors.site_visit_date"
-                            >
-                         </v-text-field>
-                        </v-col>
-                        <v-col>
-                             <v-text-field
-                            v-model="form.site_visit_time"
-                            label="Site Visit Time"
-                            type="time"
-                            outlined
-                            :error-messages="errors.site_visit_time"
-                            >
-                         </v-text-field> 
-                        </v-col>
-                    </v-row>
-                    <v-row>
-                        <v-col>
-                            <v-textarea
-                            v-model="form.instructions"
-                            label="Response Instructions"
-                            outlined
-                            :error-messages="errors.instructions"
-                            >
-
-                            </v-textarea>
-                        </v-col>
-                    </v-row>
-                      <v-row>
+                 <v-row>
                         <v-col>
                             <v-textarea
                             v-model="form.description"
@@ -247,132 +139,22 @@
                             </v-textarea>
                         </v-col>
                     </v-row>
-                    <v-row>
-                        <v-col>
-                            <v-card>
-                                <v-card-title class="blue lighten-3">
-                                    <div>Product/Service Required</div>
-                                     <v-spacer/>
-                                        <v-btn
-                                        class="mx-2"
-                                        fab
-                                        dark
-                                        depressed
-                                        color="indigo"
-                                        @click="addModel=true"
-                                        >
-                                        <v-icon dark>
-                                            mdi-plus
-                                        </v-icon>
-                                        </v-btn>
-                                </v-card-title>
-                                <v-card-text>
-                                   <v-simple-table>
-                                        <template v-slot:default>
-                                            <thead>
-                                                <tr>
-                                                <th>Product</th>
-                                                <th>Quantity</th>
-                                                <th>Categories</th>
-                                                <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <template v-if="productlist.length > 0">
-                                                   <tr v-for="(product,key) in productlist" :key="key">
-                                                       <td>
-                                                           {{product.name}}
-                                                       </td>
-                                                       <td>
-                                                           {{product.quantity}}
-                                                       </td>
-                                                       <td>
-                                                           <div v-if="product.categories.length >0">
-                                                               <div v-for="cat in product.categories" :key="cat.id">
-                                                                   {{cat.name}}
-                                                               </div>                                                          
-                                                           </div>
-                                                       </td>
-                                                       <td>
-                                                           <v-btn
-                                                            fab
-                                                            dark
-                                                            depressed
-                                                            color="error"
-                                                            @click="deleteProduct(key)"
-                                                            >
-                                                            <v-icon dark>
-                                                                mdi-delete
-                                                            </v-icon>
-                                                            </v-btn>  
-                                                       </td>
-                                                   </tr>
-                                                </template>
-                                                <template v-else>
-                                                     <tr>
-                                                         <td colspan="4" class="text-center red--text pa-5"> No Products Added As Yet</td>
-                                                     </tr>
-                                                </template>
-                                            </tbody>
-                                        </template>
-                                   </v-simple-table>
-                                </v-card-text>
-                            </v-card>
-                        </v-col>
-                    </v-row>
+                  
                  </v-card-text>
-                 <v-card-actions>
+                  <v-card-actions>
                      <v-btn color="error" rounded depressed :href="$route('procurementnotice.index')">Cancel</v-btn>
                      <v-spacer/>
                      <v-btn color="success" rounded depressed @click="submit">Submit</v-btn>
                  </v-card-actions>
              </v-card>
+        
                 </v-col>
-            </v-row>
-            <v-dialog v-model="addModel" max-width="600">
-                <v-card>
-                    <v-card-title>
-                        <div>Add Product</div>
-                        <v-spacer/>
-                        <v-btn icon @click="addModel=false">
-                            <v-icon>mdi-close</v-icon>
-                        </v-btn>
-                    </v-card-title>
-                    <v-card-text>
-                              <v-text-field
-                            v-model="name"
-                            label="Product Name"
-                            outlined
-                            >
-                         </v-text-field>
-                          <v-text-field
-                            v-model="quantity"
-                            label="Quantity"
-                            outlined
-                            type="number"
-                            >
-                         </v-text-field>
-                          <v-combobox
-                        v-model="select"
-                        :items="categories"
-                        item-value="id"
-                        item-text="name"
-                        label="Select Categories"
-                        multiple
-                        chips
-                        ></v-combobox>
-                    </v-card-text>
-                    <v-card-actions>
-                        <v-btn small color="error" @click="addModel=false">Cancel</v-btn>
-                        <v-spacer/>
-                        <v-btn small color="success" @click="addProduct" :loading="form.processing" :disabled="form.processing">Submit</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </v-dialog>
+           </v-row>
+          
           </v-container>
        </userlayout>
-</template>
-<script>
+    </template>
+    <script>
 import  userlayout  from '../../../Layouts/entityLayout';
 import Vue from 'vue'
 export  default {
@@ -382,25 +164,18 @@ export  default {
     },
     data(){
         return{
+            require_bid_bond:false,
          form:this.$inertia.form({
              title:'',
-             limit:'',
              close_date:'',
              close_time:'',
-             currency:'',
-             bidvalue:'',
-             noticetype:'',
              procurementtype:'',
-             bidsecurity:'',
-             validityperiod:'',
-             sitevisitlocation:'',
-             site_visit_date:'',
-             site_visit_time:'',
-             instructions:'',
              description:'',
-             classification:'',
              filename:null,
-             products:[]
+             bidsecurity:'',
+             alidityperiod:'',
+             currency:''
+
 
          }),
          clienttypes:['Domestic','International'],
@@ -415,16 +190,7 @@ export  default {
 
         }
     },methods: {
-        addProduct(){
-             this.productlist.push({name:this.name,quantity:this.quantity,categories:this.select});
-             this.name=""
-             this.quantity=""
-             this.select=""
-             this.addModel=false
-        },deleteProduct(key){
-            this.productlist.splice(1,key)
-        },submit(){
-            this.form.products = this.productlist;
+        submit(){
             this.form.post(this.$route('procurementnotice.store'),{
 
             })

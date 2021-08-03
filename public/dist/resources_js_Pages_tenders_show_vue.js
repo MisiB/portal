@@ -125,119 +125,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['errors', 'successMessage', 'errorMessage', 'notice', 'spoc', 'establishment'],
@@ -760,57 +647,8 @@ var render = function() {
                               },
                               on: { click: _vm.download }
                             },
-                            [_vm._v("Download")]
-                          ),
-                          _vm._v(" "),
-                          _vm.notice.status == "PENDING"
-                            ? _c(
-                                "v-btn",
-                                {
-                                  staticClass: "ml-2",
-                                  attrs: {
-                                    small: "",
-                                    rounded: "",
-                                    color: "primary",
-                                    depressed: ""
-                                  }
-                                },
-                                [_vm._v("Edit")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.notice.status == "PENDING"
-                            ? _c(
-                                "inertia-link",
-                                {
-                                  staticClass:
-                                    "ml-2 v-btn v-btn--has-bg v-btn--rounded theme--light v-size--small success",
-                                  attrs: {
-                                    href: _vm.$route(
-                                      "procurementnotice.edit",
-                                      _vm.notice.id
-                                    )
-                                  }
-                                },
-                                [_vm._v("Publish")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.notice.status == "PENDING"
-                            ? _c(
-                                "v-btn",
-                                {
-                                  staticClass: "ml-2",
-                                  attrs: {
-                                    small: "",
-                                    rounded: "",
-                                    color: "error",
-                                    depressed: ""
-                                  }
-                                },
-                                [_vm._v("Delete")]
-                              )
-                            : _vm._e()
+                            [_vm._v("Download SBD")]
+                          )
                         ],
                         1
                       ),
@@ -827,237 +665,39 @@ var render = function() {
                                     _c("tbody", [
                                       _c("tr", [
                                         _c("th", [_vm._v("Title")]),
-                                        _vm._v(" "),
                                         _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.title) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Closing Date")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.close_date) +
-                                              "\n                               " +
-                                              _vm._s(_vm.notice.close_time) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Status")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.status) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Tender Number")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.tendernumber) +
-                                              "\n                           "
-                                          )
+                                          _vm._v(_vm._s(_vm.notice.title))
                                         ])
                                       ]),
                                       _vm._v(" "),
                                       _c("tr", [
                                         _c("th", [_vm._v("Procurement Type")]),
-                                        _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            "\n                               " +
-                                              _vm._s(
-                                                _vm.notice.procurementtype.name
-                                              ) +
-                                              "\n                           "
+                                            _vm._s(
+                                              _vm.notice.procurementtype.name
+                                            )
                                           )
                                         ])
                                       ]),
                                       _vm._v(" "),
                                       _c("tr", [
-                                        _c("th", [_vm._v("Client Type")]),
-                                        _vm._v(" "),
+                                        _c("th", [_vm._v("Close Date")]),
                                         _c("td", [
                                           _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.noticetype) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Classification")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(
-                                                _vm.notice.classification.name
-                                              ) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Bid Security")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.currency.name) +
+                                            _vm._s(_vm.notice.close_date) +
                                               " " +
-                                              _vm._s(_vm.notice.bidsecurity) +
-                                              "\n                           "
+                                              _vm._s(_vm.notice.close_time)
                                           )
                                         ])
                                       ]),
                                       _vm._v(" "),
                                       _c("tr", [
-                                        _c("th", [
-                                          _vm._v("Calculated SPOC fee")
-                                        ]),
-                                        _vm._v(" "),
                                         _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.currency.name) +
-                                              " " +
-                                              _vm._s(_vm.spoc) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [
-                                          _vm._v("Calculated Establishment Fee")
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.currency.name) +
-                                              " " +
-                                              _vm._s(_vm.establishment) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Description")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.description) +
-                                              "\n                           "
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Instructions")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                               " +
-                                              _vm._s(_vm.notice.instructions) +
-                                              "\n                           "
-                                          )
+                                          _vm._v(_vm._s(_vm.notice.description))
                                         ])
                                       ])
                                     ])
-                                  ]
-                                },
-                                proxy: true
-                              }
-                            ])
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "headline mt-5 ml-2" }, [
-                            _vm._v("Products/Services")
-                          ]),
-                          _vm._v(" "),
-                          _c("v-simple-table", {
-                            scopedSlots: _vm._u([
-                              {
-                                key: "default",
-                                fn: function() {
-                                  return [
-                                    _c("thead", [
-                                      _c("tr", [
-                                        _c("th", [_vm._v("Product Name")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Quantity")]),
-                                        _vm._v(" "),
-                                        _c("th", [
-                                          _vm._v("Required PRAZ Categories")
-                                        ])
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "tbody",
-                                      _vm._l(_vm.notice.products, function(
-                                        product
-                                      ) {
-                                        return _c("tr", { key: product.id }, [
-                                          _c("td", [
-                                            _vm._v(_vm._s(product.name))
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("td", [
-                                            _vm._v(_vm._s(product.quantity))
-                                          ]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "td",
-                                            _vm._l(product.categories, function(
-                                              cat
-                                            ) {
-                                              return _c(
-                                                "div",
-                                                { key: cat.id },
-                                                [
-                                                  _c("div", [
-                                                    _vm._v(
-                                                      _vm._s(
-                                                        cat.category.name
-                                                      ) +
-                                                        "(" +
-                                                        _vm._s(
-                                                          cat.category.code
-                                                        ) +
-                                                        ")"
-                                                    )
-                                                  ])
-                                                ]
-                                              )
-                                            }),
-                                            0
-                                          )
-                                        ])
-                                      }),
-                                      0
-                                    )
                                   ]
                                 },
                                 proxy: true

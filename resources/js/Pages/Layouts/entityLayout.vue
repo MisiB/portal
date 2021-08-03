@@ -75,7 +75,7 @@
            
 
         <v-list>
-              <inertia-link class="v-list-item v-list-item--link theme--light  pt-2 pb-2 pl-2 pr-0 d-flex" :href="$route('admin.home')">
+              <inertia-link class="v-list-item v-list-item--link theme--light  pt-2 pb-2 pl-2 pr-0 d-flex" :href="$route('entity.home')">
                    <v-icon>mdi-view-dashboard</v-icon><div class="ml-2"> Dashboard</div>
              </inertia-link>            
                          

@@ -27,10 +27,7 @@
                         <template v-slot:default>
                             <thead>
                                 <tr>
-                                    <th>Title</th>
-                                   <th>Closing Date</th>
-                                   <th>Active Status</th>
-                                   <th>Status</th>
+                                    <th>Notice</th>
                                    <th></th>
                                 </tr>
                             </thead>
@@ -38,23 +35,20 @@
                                 <template v-if="notices.length>0">
                                 <tr v-for="notice in notices" :key="notice.id" >
                                   <td>
-                                      {{notice.title}}
+                                    <div>  {{notice.title}}</div>
+                                    <div> {{notice.close_date}} {{notice.close_time}}</div>
+                                    <div> {{notice.active}}</div>
+                                    <div>   {{notice.status}}</div>
                                   </td>
-                                  <td>
-                                      {{notice.close_date}} {{notice.close_time}}
-                                  </td>
-                                  <td>
-                                      {{notice.active}}
-                                  </td>
-                                  <td>
-                                      {{notice.status}} 
-                                  </td>
+                                 
+                                 
                                   <td>
                                     <inertia-link class="v-btn v-btn--has-bg theme--light v-size--small primary" :href="$route('procurementnotice.show',notice.uuid)">View</inertia-link>
-                                    
-                                    <template v-if="notice.status=='PUBLISHED'">
-                                     <inertia-link class="v-btn v-btn--has-bg theme--light v-size--small success" :href="$route('procurementnotice.show',notice.uuid)" v-if="notice.active=='N'">Award</inertia-link>
-                                    </template>
+                                                       <v-btn small rounded color="info" depressed @click="download(notice)">Download</v-btn>
+                      <v-btn small rounded color="primary" v-if="notice.status=='PENDING'" depressed class="ml-2">Edit</v-btn>
+                      <inertia-link v-if="notice.status=='PENDING'" class="ml-2 v-btn v-btn--has-bg v-btn--rounded theme--light v-size--small success" :href="$route('procurementnotice.edit',notice.uuid)">Publish</inertia-link>
+                      <v-btn small rounded color="error" v-if="notice.status=='PENDING'" depressed class="ml-2">Delete</v-btn>
+                             
                                   </td>
                                 </tr>
                                 </template>
@@ -86,7 +80,10 @@ export  default {
 
         }
     },methods: {
-
+          download(notice){
+           var path  ='/'+notice.filename
+           window.open(path)
+       }
     }
 }
 </script>
