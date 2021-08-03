@@ -29,29 +29,19 @@
                         <template v-slot:default>
                             <thead>
                                 <tr>
-                                    <th>Title</th>
-                                   <th>Closing Date</th>
-                                   <th>Active Status</th>
-                                   <th>Status</th>
+                                    <th>Notie</th>
                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <template v-if="notices.length>0">
-                                <tr v-for="notice in notices" :key="notice.id" >
+                              <tr v-for="notice in notices" :key="notice.id" >
                                   <td>
-                                      {{notice.title}}
+                                    <div class="headline">{{notice.title}}</div>
+                                    <div> <b>Closing Date:</b> {{notice.close_date}} {{notice.close_time}}</div>
+                                    <div> <b>Active:</b> {{notice.active}}</div>
                                   </td>
-                                  <td>
-                                      {{notice.close_date}} {{notice.close_time}}
-                                  </td>
-                                  <td>
-                                      {{notice.active}}
-                                  </td>
-                                  <td>
-                                      {{notice.status}} 
-                                  </td>
-                                  <td>
+                                  <td class="text-right">
                                     <inertia-link class="v-btn v-btn--has-bg theme--light v-size--small primary" :href="$route('notice',notice.uuid)">View</inertia-link>
                                                                        
                                   </td>
