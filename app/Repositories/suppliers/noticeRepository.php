@@ -21,7 +21,7 @@ class noticeRepository{
                 if(Carbon::parse($value->close_date)->gte(Carbon::now())){
                 $active = 'Y';
                 }
-               $array[] = array("uuid"=>$value->uuid,'title'=>$value->title,'close_date'=>$value->close_date,'close_time'=>$value->close_time,'status'=>$value->status,'active'=>$active);
+               $array[] = array("uuid"=>$value->uuid,'entity'=>$value->entity->name,'title'=>$value->title,'close_date'=>$value->close_date,'close_time'=>$value->close_time,'status'=>$value->status,'active'=>$active);
             }
         }
 
@@ -39,7 +39,7 @@ class noticeRepository{
                 if(Carbon::parse($value->close_date)->gte(Carbon::now())){
                 $active = 'Y';
                 }
-               $array[] = array("uuid"=>$value->uuid,'title'=>$value->title,'close_date'=>$value->close_date,'close_time'=>$value->close_time,'status'=>$value->status,'active'=>$active);
+               $array[] = array("uuid"=>$value->uuid,'entity'=>$value->entity->name,'title'=>$value->title,'close_date'=>$value->close_date,'close_time'=>$value->close_time,'status'=>$value->status,'active'=>$active);
             }
         }
 
@@ -47,7 +47,7 @@ class noticeRepository{
     }
 
     public function show($id){
-        $notice =  procurementnotices::with('procurementtype','currency','createdby','publishedby','products.categories.category','classification')->whereuuid($id)->first();  
+        $notice =  procurementnotices::with('procurementtype','entity','currency','createdby','publishedby','products.categories.category','classification')->whereuuid($id)->first();  
         $spocfee=0;
         $establishmentfee =0;
         if($notice->procurementtype_id=='2'){

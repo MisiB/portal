@@ -128,19 +128,33 @@
                         <template v-slot:default>
                             <thead>
                                 <tr>
-                                    <th>Notie</th>
+                                   <th>Title</th>
+                                   <th>Entity</th>
+                                   <th>Closing Date</th>
+                                   <th>Active Status</th>
+                                   <th>Status</th>
                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <template v-if="notices.length>0">
-                                <tr v-for="notice in notices" :key="notice.id" >
+                                   <tr v-for="notice in notices" :key="notice.id" >
                                   <td>
-                                    <div class="headline">{{notice.title}}</div>
-                                    <div> <b>Closing Date:</b> {{notice.close_date}} {{notice.close_time}}</div>
-                                    <div> <b>Active:</b> {{notice.active}}</div>
+                                      {{notice.title}}
                                   </td>
-                                  <td class="text-right">
+                                  <td>
+                                      {{notice.entity}}
+                                  </td>
+                                  <td>
+                                      {{notice.close_date}} {{notice.close_time}}
+                                  </td>
+                                  <td>
+                                      {{notice.active}}
+                                  </td>
+                                  <td>
+                                      {{notice.status}} 
+                                  </td>
+                                  <td>
                                     <inertia-link class="v-btn v-btn--has-bg theme--light v-size--small primary" :href="$route('notice',notice.uuid)">View</inertia-link>
                                                                        
                                   </td>
@@ -148,7 +162,7 @@
                                 </template>
                                 <template v-else>
                                    <tr>
-                                       <td colspan="2" class="pa-5 text-center red--text">No procurement notices found</td>
+                                       <td colspan="4" class="pa-5 text-center red--text">No procurement notices found</td>
                                    </tr>
                                 </template>
                             </tbody>
