@@ -27,14 +27,9 @@ class paynowRepository implements paynowInterface{
      $paynow = $this->HELPER->paynowOnline();
      $user = Auth::user();
      $invoice = $this->invoicing->getInvoice($user->company);
-<<<<<<< HEAD
      $receipted = count($invoice[0]->receipts)>0 ? $invoice[0]->receipts->sum('amount') : 0;
      $amount = $invoice->sum('cost')-$receipted;
-=======
-     $receipted = count($invoice[0]->receipts)>0 ? $invoice[0]->receipts->sum('') : 0;
-     $amount = $invoice->sum('cost')-$receipted;
      
->>>>>>> 593896111c49b0c79d0b45f6048b8e0d2576ce54
      if(count($invoice)>0){
          $invoice_number = $invoice[0]->invoice_number;
          $this->HELPER->check_invoice_settlement($invoice[0]->invoice_number,$user->email);
