@@ -82,12 +82,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['errors', 'successMessage', 'errorMessage', 'notices', 'currency', 'procurementtypes', 'categories'],
@@ -97,7 +91,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {}
+  methods: {
+    download: function download(notice) {
+      var path = '/' + notice.filename;
+      window.open(path);
+    }
+  }
 });
 
 /***/ }),
@@ -520,13 +519,7 @@ var render = function() {
                                   return [
                                     _c("thead", [
                                       _c("tr", [
-                                        _c("th", [_vm._v("Title")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Closing Date")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Active Status")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Status")]),
+                                        _c("th", [_vm._v("Notice")]),
                                         _vm._v(" "),
                                         _c("th")
                                       ])
@@ -544,41 +537,39 @@ var render = function() {
                                                 { key: notice.id },
                                                 [
                                                   _c("td", [
-                                                    _vm._v(
-                                                      "\n                               " +
-                                                        _vm._s(notice.title) +
-                                                        "\n                           "
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("td", [
-                                                    _vm._v(
-                                                      "\n                               " +
-                                                        _vm._s(
-                                                          notice.close_date
-                                                        ) +
+                                                    _c("div", [
+                                                      _vm._v(
+                                                        "  " +
+                                                          _vm._s(notice.title)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("div", [
+                                                      _vm._v(
                                                         " " +
-                                                        _vm._s(
-                                                          notice.close_time
-                                                        ) +
-                                                        "\n                           "
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("td", [
-                                                    _vm._v(
-                                                      "\n                               " +
-                                                        _vm._s(notice.active) +
-                                                        "\n                           "
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c("td", [
-                                                    _vm._v(
-                                                      "\n                               " +
-                                                        _vm._s(notice.status) +
-                                                        " \n                           "
-                                                    )
+                                                          _vm._s(
+                                                            notice.close_date
+                                                          ) +
+                                                          " " +
+                                                          _vm._s(
+                                                            notice.close_time
+                                                          )
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("div", [
+                                                      _vm._v(
+                                                        " " +
+                                                          _vm._s(notice.active)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("div", [
+                                                      _vm._v(
+                                                        "   " +
+                                                          _vm._s(notice.status)
+                                                      )
+                                                    ])
                                                   ]),
                                                   _vm._v(" "),
                                                   _c(
@@ -599,33 +590,81 @@ var render = function() {
                                                         [_vm._v("View")]
                                                       ),
                                                       _vm._v(" "),
-                                                      notice.status ==
-                                                      "PUBLISHED"
-                                                        ? [
-                                                            notice.active == "N"
-                                                              ? _c(
-                                                                  "inertia-link",
-                                                                  {
-                                                                    staticClass:
-                                                                      "v-btn v-btn--has-bg theme--light v-size--small success",
-                                                                    attrs: {
-                                                                      href: _vm.$route(
-                                                                        "procurementnotice.show",
-                                                                        notice.uuid
-                                                                      )
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Award"
-                                                                    )
-                                                                  ]
+                                                      _c(
+                                                        "v-btn",
+                                                        {
+                                                          attrs: {
+                                                            small: "",
+                                                            rounded: "",
+                                                            color: "info",
+                                                            depressed: ""
+                                                          },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              return _vm.download(
+                                                                notice
+                                                              )
+                                                            }
+                                                          }
+                                                        },
+                                                        [_vm._v("Download")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      notice.status == "PENDING"
+                                                        ? _c(
+                                                            "v-btn",
+                                                            {
+                                                              staticClass:
+                                                                "ml-2",
+                                                              attrs: {
+                                                                small: "",
+                                                                rounded: "",
+                                                                color:
+                                                                  "primary",
+                                                                depressed: ""
+                                                              }
+                                                            },
+                                                            [_vm._v("Edit")]
+                                                          )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      notice.status == "PENDING"
+                                                        ? _c(
+                                                            "inertia-link",
+                                                            {
+                                                              staticClass:
+                                                                "ml-2 v-btn v-btn--has-bg v-btn--rounded theme--light v-size--small success",
+                                                              attrs: {
+                                                                href: _vm.$route(
+                                                                  "procurementnotice.edit",
+                                                                  notice.uuid
                                                                 )
-                                                              : _vm._e()
-                                                          ]
+                                                              }
+                                                            },
+                                                            [_vm._v("Publish")]
+                                                          )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      notice.status == "PENDING"
+                                                        ? _c(
+                                                            "v-btn",
+                                                            {
+                                                              staticClass:
+                                                                "ml-2",
+                                                              attrs: {
+                                                                small: "",
+                                                                rounded: "",
+                                                                color: "error",
+                                                                depressed: ""
+                                                              }
+                                                            },
+                                                            [_vm._v("Delete")]
+                                                          )
                                                         : _vm._e()
                                                     ],
-                                                    2
+                                                    1
                                                   )
                                                 ]
                                               )
@@ -873,7 +912,7 @@ var render = function() {
                 {
                   staticClass:
                     "v-list-item v-list-item--link theme--light  pt-2 pb-2 pl-2 pr-0 d-flex",
-                  attrs: { href: _vm.$route("admin.home") }
+                  attrs: { href: _vm.$route("entity.home") }
                 },
                 [
                   _c("v-icon", [_vm._v("mdi-view-dashboard")]),

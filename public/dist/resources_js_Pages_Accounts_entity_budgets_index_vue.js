@@ -971,7 +971,7 @@ var render = function() {
                 {
                   staticClass:
                     "v-list-item v-list-item--link theme--light  pt-2 pb-2 pl-2 pr-0 d-flex",
-                  attrs: { href: _vm.$route("admin.home") }
+                  attrs: { href: _vm.$route("entity.home") }
                 },
                 [
                   _c("v-icon", [_vm._v("mdi-view-dashboard")]),
