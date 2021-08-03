@@ -116,6 +116,15 @@
                         </v-col>
              </v-row>
                <v-row>
+                     <v-col>
+                            <v-text-field
+                            v-model="form.tendernumber"
+                            label="Reference number"
+                            outlined
+                            :error-messages="errors.tendernumber"
+                            >
+                         </v-text-field>
+                     </v-col>
                           <v-col>
                              <v-file-input
                         show-size
@@ -174,7 +183,8 @@ export  default {
              filename:null,
              bidsecurity:'',
              alidityperiod:'',
-             currency:''
+             currency:'',
+             tendernumber:''
 
 
          }),

@@ -1182,12 +1182,8 @@ var render = function() {
                                                         staticClass: "headline"
                                                       },
                                                       [
-                                                        _c("b", [
-                                                          _vm._v("Title:")
-                                                        ]),
                                                         _vm._v(
-                                                          "  " +
-                                                            _vm._s(notice.title)
+                                                          _vm._s(notice.title)
                                                         )
                                                       ]
                                                     ),

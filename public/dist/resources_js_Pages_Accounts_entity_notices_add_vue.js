@@ -168,6 +168,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -187,7 +196,8 @@ __webpack_require__.r(__webpack_exports__);
         filename: null,
         bidsecurity: '',
         alidityperiod: '',
-        currency: ''
+        currency: '',
+        tendernumber: ''
       }),
       clienttypes: ['Domestic', 'International'],
       periodlist: ['30', '60', '90'],
@@ -845,6 +855,27 @@ var render = function() {
                           _c(
                             "v-row",
                             [
+                              _c(
+                                "v-col",
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      label: "Reference number",
+                                      outlined: "",
+                                      "error-messages": _vm.errors.tendernumber
+                                    },
+                                    model: {
+                                      value: _vm.form.tendernumber,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "tendernumber", $$v)
+                                      },
+                                      expression: "form.tendernumber"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
                               _c(
                                 "v-col",
                                 [

@@ -136,7 +136,7 @@
                                 <template v-if="notices.length>0">
                                 <tr v-for="notice in notices" :key="notice.id" >
                                   <td>
-                                    <div class="headline"> <b>Title:</b>  {{notice.title}}</div>
+                                    <div class="headline">{{notice.title}}</div>
                                     <div> <b>Closing Date:</b> {{notice.close_date}} {{notice.close_time}}</div>
                                     <div> <b>Active:</b> {{notice.active}}</div>
                                   </td>

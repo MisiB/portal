@@ -71,7 +71,7 @@ class procurementnoticeRepository{
     public function create(Request $request){
 
         $entity = $this->helper->getEntity();
-        $tendernumber = $this->helper->tendernumber($entity->slug,$request->noticetype);
+       // $tendernumber = $this->helper->tendernumber($entity->slug,$request->noticetype);
      /*     if($request->procurementtype=='2'){
              if($request->bidsecurity !=''){
                 $response = $this->helper->calculate_cap($request->bidsecurity,$request->bidvalue);
@@ -87,7 +87,7 @@ class procurementnoticeRepository{
                 'entity_id'=>$entity->id,
                 'uuid'=>Str::uuid(),
                 'title'=>$request->title,
-                'tendernumber'=>$tendernumber,
+                'tendernumber'=>$request->tendernumber,
                 'description'=>$request->description,
                 'close_date'=>$request->close_date,
                 'close_time'=>$request->close_time,
