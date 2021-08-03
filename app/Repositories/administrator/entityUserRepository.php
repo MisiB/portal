@@ -22,12 +22,12 @@ class entityUserRepository{
             $user->name = $request->name;
             $user->surname = $request->surname;
             $user->email = $request->email;
-            $user->role_id = $request->role;
+            $user->role_id = $request->role; 
             $user->save();
         }   
       
    
-        return  array('status'=>'successMessage','message'=>'User Successfully Created');
+        return  array('status'=>'successMessage','message'=>'User Successfully Created with password:'.$password);
     }
 
     public function delete($id){

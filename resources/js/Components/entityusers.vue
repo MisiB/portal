@@ -138,11 +138,24 @@ export default {
                 onSuccess:(page)=>{
                     this.form.reset();
                     this.addUser = false
-                     Vue.swal(
-                                            'Successful',
-                                            this.successMessage,
-                                            'success'
-                                            )
+                         if(this.successMessage)
+                            {
+                                this.form.reset()
+                                this.selectDialog= false
+                            Vue.swal(
+                                    'Successful',
+                                    this.successMessage,
+                                    'success'
+                                    )
+
+                            }
+                            if(this.errorMessage){
+                            Vue.swal(
+                                    'Oops',
+                                    this.errorMessage,
+                                    'error'
+                                    )
+                            }
                                         
                     },
                      onError:(error)=>{

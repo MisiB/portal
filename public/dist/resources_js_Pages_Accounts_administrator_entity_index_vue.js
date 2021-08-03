@@ -154,7 +154,17 @@ __webpack_require__.r(__webpack_exports__);
           _this.form.reset();
 
           _this.addUser = false;
-          vue__WEBPACK_IMPORTED_MODULE_0__.default.swal('Successful', _this.successMessage, 'success');
+
+          if (_this.successMessage) {
+            _this.form.reset();
+
+            _this.selectDialog = false;
+            vue__WEBPACK_IMPORTED_MODULE_0__.default.swal('Successful', _this.successMessage, 'success');
+          }
+
+          if (_this.errorMessage) {
+            vue__WEBPACK_IMPORTED_MODULE_0__.default.swal('Oops', _this.errorMessage, 'error');
+          }
         },
         onError: function onError(error) {
           _this.loading = false;
