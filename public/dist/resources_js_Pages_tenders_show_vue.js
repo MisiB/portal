@@ -677,7 +677,6 @@ var render = function() {
                                       ]),
                                       _vm._v(" "),
                                       _c("tr", [
-                                        _c("th", [_vm._v("Procurement Type")]),
                                         _c("td", [
                                           _vm._v(
                                             _vm._s(
@@ -688,7 +687,6 @@ var render = function() {
                                       ]),
                                       _vm._v(" "),
                                       _c("tr", [
-                                        _c("th", [_vm._v("Close Date")]),
                                         _c("td", [
                                           _vm._v(
                                             _vm._s(_vm.notice.close_date) +
