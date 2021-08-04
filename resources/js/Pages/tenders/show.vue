@@ -23,7 +23,8 @@
                  <v-simple-table>
                         <template v-slot:default>
                           <tbody>
-                            <tr><td>{{notice.title}}</td></tr>  
+                            <tr><td>{{notice.title}}</td></tr> 
+                            <tr><td>{{notice.tendernumber}}</td></tr>  
                              <tr><td>{{notice.entity.name}}</td></tr> 
                               <tr><td>{{notice.procurementtype.name}}</td></tr>                           
                             <tr><td>{{notice.close_date}} {{notice.close_time}}</td></tr>
