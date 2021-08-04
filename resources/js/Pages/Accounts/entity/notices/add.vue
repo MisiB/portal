@@ -182,7 +182,7 @@ export  default {
              description:'',
              filename:null,
              bidsecurity:'',
-             alidityperiod:'',
+             validityperiod:'',
              currency:'',
              tendernumber:''
 

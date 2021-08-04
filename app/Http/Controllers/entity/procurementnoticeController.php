@@ -35,7 +35,7 @@ class procurementnoticeController extends Controller
     
     public function store(Request $request)
     {
-      $request->validate(['title'=>'required','close_date'=>'required','close_time'=>'required','description'=>'required','procurementtype'=>'required','filename'=>'required|file','tendernumber']);
+      $request->validate(['title'=>'required','close_date'=>'required','close_time'=>'required','description'=>'required','procurementtype'=>'required','filename'=>'required|file','tendernumber'=>'required','validityperiod'=>'required']);
        $response = $this->procurementnotice->create($request);
        if($response['status']=='successMessage')
        {
