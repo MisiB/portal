@@ -79,7 +79,7 @@ class mytendersRepository{
      }
 
      public function show($id){
-        $notice =  procurementnotices::with('procurementtype','currency','createdby','publishedby','products.categories.category','classification')->whereuuid($id)->first();  
+        $notice =  procurementnotices::with('procurementtype','entity','currency','createdby','publishedby','products.categories.category','classification')->whereuuid($id)->first();  
         $spocfee=0;
         $establishmentfee =0;
         if($notice->procurementtype_id=='2'){
