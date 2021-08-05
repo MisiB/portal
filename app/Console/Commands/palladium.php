@@ -151,7 +151,7 @@ class palladium extends Command
           
 
         $receipts =  receipts::with('supplierinvoices','tenderinvoices')->whereposted(0)->whereYear('created_at',Carbon::now()->year)->get();
-        
+        $exchange =  bank_rate::orderBy('id','desc')->first();
         if(count($receipts)>0){
             $receiptsarray=[];
              foreach ($receipts as $key => $value) {
@@ -179,7 +179,7 @@ class palladium extends Command
                  {
                      $rate = 1;
                      if($value->currency=='USD'){
-                         $exchange =  bank_rate::orderBy('id','desc')->first();
+                      
                          if(!is_null($exchange)){
                              $rate = $exchange->value;
                          }
