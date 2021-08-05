@@ -52,6 +52,7 @@ class palladium extends Command
          * get customers
          */
         $exchange =  bank_rate::orderBy('id','desc')->first();
+        $rate=1;
         $customers= company::with('contacts')->whereposted(0)->get();
              
             $customerarray=[];
@@ -81,6 +82,7 @@ class palladium extends Command
                 {
                     if(!is_null($value->category))
                     {
+                        
                         if($value->currency->name=='USD'){
                       
                             if(!is_null($exchange)){
