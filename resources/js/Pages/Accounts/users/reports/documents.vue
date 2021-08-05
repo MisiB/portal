@@ -41,7 +41,7 @@
                                        <td>{{doc.name}}</td>
                                        <td>{{doc.status}}</td>
                                        <td class="d-flex">                                           
-                                           <v-btn color="green" depressed class="white--text mt-1" small v-if="doc.uploaded" @click="openUpload(doc)">Upload</v-btn>
+                                           <v-btn color="green" depressed class="white--text mt-1" small  @click="openUpload(doc)">Upload</v-btn>
                                        </td>
                                    </tr>
                                </template>
