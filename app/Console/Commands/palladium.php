@@ -51,8 +51,8 @@ class palladium extends Command
         /**
          * get customers
          */
-         
-        company::with('contacts')->whereposted(0)->chunkById(200,function($customers){
+        $exchange =  bank_rate::orderBy('id','desc')->first();
+        $customers= company::with('contacts')->whereposted(0)->get();
              
             $customerarray=[];
             foreach ($customers as $key => $value) {
@@ -67,25 +67,12 @@ class palladium extends Command
               }
              
               
-         },$column='id'); 
-       /*   if(count($customers)>0){
-             $customerarray=[];
-              foreach ($customers as $key => $value) {
-                  $emails = !is_null($value->contacts) ? $value->contacts->emails:$value->regnumber.'@dummy.co.zw';
-                  $phones = !is_null($value->contacts) ? $value->contacts->phones:rand(10000,100000);
-                  $address = !is_null($value->contacts) ? $value->contacts->address:'dummy address';
-                  $customerarray[] = array('source_id'=>$value->id,'regnumber'=>$value->regnumber,'name'=>$value->name,'phones'=>$phones,'emails'=>$emails,'address'=>$address);
-                 $value->posted =1;
-                 $value->save();
-                }
-
-                DB::connection('mysql_remote')->table('account_details')->insert($customerarray);
-         } 
+        
         /**
          * get supplier invoices 
          */
 
-      nonrefundable_invoices::with('category','company')->whereposted(0)->wherestatus('PAID')->where('year','=',Carbon::now()->year)->chunkById(200,function($supplierinvoices){
+        $supplierinvoices=nonrefundable_invoices::with('category','company')->whereposted(0)->wherestatus('PAID')->where('year','=',Carbon::now()->year)->get();
         if(count($supplierinvoices)>0)
         {
             
@@ -94,6 +81,13 @@ class palladium extends Command
                 {
                     if(!is_null($value->category))
                     {
+                        if($value->currency->name=='USD'){
+                      
+                            if(!is_null($exchange)){
+                                $rate = $exchange->value;
+                            }
+                        }
+                    
                      
                         $supplier_invoices = array(
                                                    'invoice_number'=>$value->invoice_number,
@@ -106,6 +100,8 @@ class palladium extends Command
                                                     'updated_at'=>$value->updated_at,
                                                     'description'=>!is_null($value->category)? $value->category->name : 'SUPPLIER REGISTRATION',                                                    
                                                     'additional'=>'SUPPLIER',
+                                                    'currency'=>$value->currency->name,
+                                                    'rate'=>$rate
                                                  
                                                    );
                         DB::connection('mysql_remote')->table('invoices')->insert($supplier_invoices);
@@ -118,26 +114,34 @@ class palladium extends Command
           
            
         }
-         },$column='id');
+        
           
         
-          tender_invoice::with('company')->whereposted(0)->wherestatus('PAID')->where('year','=',Carbon::now()->year)->chunkById(200,function($tenderinvoices)use($ledgers){
+         $tenderinvoices= tender_invoice::with('company')->whereposted(0)->wherestatus('PAID')->where('year','=',Carbon::now()->year)->get();
             if(count($tenderinvoices)>0)
             {
                 $tender_invoices=[];
               
                 foreach ($tenderinvoices as $key => $value) {
+                    if($value->currency->name=='USD'){
+                      
+                        if(!is_null($exchange)){
+                            $rate = $exchange->value;
+                        }
+                    }
                 
                    $tender_invoices = array('invoice_number'=>$value->invoice_number,
                                                'updated_at'=>$value->updated_at,
                                                'year'=>$value->year,
                                                'name'=>$value->currency->name,
                                                'regnumber'=>$value->company->regnumber,
+                                               'currency'=>$value->currency->name,
                                                'cost'=>$value->amount,
                                                'code'=>$value->description,
                                                'description'=>$value->description,
                                                'source_id'=>$value->id,
-                                               'additional'=>$value->tendernumber
+                                               'additional'=>$value->tendernumber,
+                                               'rate'=>$rate,
                                                );
                 DB::connection('mysql_remote')->table('invoices')->insert($tender_invoices);
                     $value->posted=1;
@@ -147,7 +151,7 @@ class palladium extends Command
                
                
             }
-         },$column='id');
+       
           
 
         $receipts =  receipts::with('supplierinvoices','tenderinvoices')->whereposted(0)->whereYear('created_at',Carbon::now()->year)->get();
@@ -179,7 +183,7 @@ class palladium extends Command
                  {
                      $rate = 1;
                      if($value->currency=='USD'){
-                         $exchange =  bank_rate::orderBy('id','desc')->first();
+                      
                          if(!is_null($exchange)){
                              $rate = $exchange->value;
                          }
