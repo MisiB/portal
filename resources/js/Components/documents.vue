@@ -18,10 +18,17 @@
                                         {{doc.name}}
                                     </td>
                                     <td>
+                                        <div v-if="doc.company">
                                         {{doc.company.status}}
+                                        </div>
+                                        <div v-else>
+                                            Not Uploaded
+                                        </div>
                                     </td>
-                                    <td>                                    
+                                    <td>  
+                                         <div v-if="doc.company">                                  
                                       <v-btn small rounded class="primary" depressed @click="download(doc.company.id)">download</v-btn>                                
+                                         </div>
                                    </td>
                                 </tr>
                             </template>

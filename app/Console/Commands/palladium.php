@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\bank_rate;
 use Illuminate\Console\Command;
 use App\Models\company;
 use App\Models\ledgeraccounts;
@@ -120,7 +121,7 @@ class palladium extends Command
          },$column='id');
           
         
-          tender_invoice::with('company')->whereposted(0)->wherestatus('PAID')->chunkById(200,function($tenderinvoices)use($ledgers){
+          tender_invoice::with('company')->whereposted(0)->wherestatus('PAID')->where('year','=',Carbon::now()->year)->chunkById(200,function($tenderinvoices)use($ledgers){
             if(count($tenderinvoices)>0)
             {
                 $tender_invoices=[];
@@ -149,11 +150,14 @@ class palladium extends Command
          },$column='id');
           
 
-        $receipts =  receipts::whereposted(0)->get();
+        $receipts =  receipts::with('supplierinvoices','tenderinvoices')->whereposted(0)->whereYear('created_at',Carbon::now()->year)->get();
         
         if(count($receipts)>0){
             $receiptsarray=[];
              foreach ($receipts as $key => $value) {
+
+                if(count($value->supplierinvoices)>0 || count($value->tenderinvoices)>0 )
+                {
                 
                 $account ="";
                 
@@ -170,9 +174,16 @@ class palladium extends Command
                
                 if($account !="")
                 {
-                    Log::info($account);
+                  
                  if(!is_null($value->company))
                  {
+                     $rate = 1;
+                     if($value->currency=='USD'){
+                         $exchange =  bank_rate::orderBy('id','desc')->first();
+                         if(!is_null($exchange)){
+                             $rate = $exchange->value;
+                         }
+                     }
                     $receiptsarray= array('receiptnumber'=>$value->receiptnumber,
                                           'invoicenumber'=>$value->invoicenumber,
                                           'regnumber'=>$value->company->regnumber,
@@ -181,7 +192,8 @@ class palladium extends Command
                                           'amount'=>$value->amount,
                                           'account'=>$account,
                                           'description'=>$value->description,
-                                          'created_at'=>$value->created_at
+                                          'created_at'=>$value->created_at,
+                                          'rate'=>$rate
                                           );
                                           DB::connection('mysql_remote')->table('receipted')->insert($receiptsarray);
                  $value->posted=1;
@@ -190,7 +202,7 @@ class palladium extends Command
                 }
              }
             
-             
+            }
         }
     }
 }
