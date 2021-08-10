@@ -156,6 +156,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['documents'],
   methods: {
@@ -1253,36 +1260,50 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("td", [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(doc.company.status) +
-                                  "\n                                "
-                              )
+                              doc.company
+                                ? _c("div", [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(doc.company.status) +
+                                        "\n                                    "
+                                    )
+                                  ])
+                                : _c("div", [
+                                    _vm._v(
+                                      "\n                                        Not Uploaded\n                                    "
+                                    )
+                                  ])
                             ]),
                             _vm._v(" "),
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "v-btn",
-                                  {
-                                    staticClass: "primary",
-                                    attrs: {
-                                      small: "",
-                                      rounded: "",
-                                      depressed: ""
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.download(doc.company.id)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("download")]
-                                )
-                              ],
-                              1
-                            )
+                            _c("td", [
+                              doc.company
+                                ? _c(
+                                    "div",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          staticClass: "primary",
+                                          attrs: {
+                                            small: "",
+                                            rounded: "",
+                                            depressed: ""
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.download(
+                                                doc.company.id
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("download")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                : _vm._e()
+                            ])
                           ])
                         })
                       : [

@@ -262,6 +262,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -954,12 +958,14 @@ var render = function() {
                       _c("v-card-title", [_vm._v("Refundable FEEs(USD)")]),
                       _vm._v(" "),
                       _c("v-card-text", [
-                        _c("div", { staticClass: "text-h5 text--primary" }, [
+                        _c("div", { staticClass: "text--primary" }, [
                           _vm._v("BID BONDS only")
                         ]),
                         _vm._v(" "),
+                        _c("div", [_vm._v("BANK: CBZ")]),
+                        _vm._v(" "),
                         _c("div", [
-                          _vm._v("  CURRENCY: UNITED STATES DOLLARS (USD)")
+                          _vm._v("CURRENCY: UNITED STATES DOLLARS (USD)")
                         ]),
                         _vm._v(" "),
                         _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850128")]),
@@ -986,11 +992,13 @@ var render = function() {
                       _c("v-card-title", [_vm._v("Refundable FEEs(ZWL)")]),
                       _vm._v(" "),
                       _c("v-card-text", [
-                        _c("div", { staticClass: "text-h5 text--primary" }, [
+                        _c("div", { staticClass: "text--primary" }, [
                           _vm._v("BID BONDS only")
                         ]),
                         _vm._v(" "),
-                        _c("div", [_vm._v("  CURRENCY: ZIM DOLLAR (ZWL)")]),
+                        _c("div", [_vm._v("BANK: CBZ")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("CURRENCY: ZIM DOLLAR (ZWL)")]),
                         _vm._v(" "),
                         _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850118")]),
                         _vm._v(" "),
@@ -1023,14 +1031,16 @@ var render = function() {
                       _c("v-card-title", [_vm._v("Nonrefundable FEEs(USD)")]),
                       _vm._v(" "),
                       _c("v-card-text", [
-                        _c("div", { staticClass: "text-h6 text--primary" }, [
+                        _c("div", { staticClass: "text--primary" }, [
                           _vm._v(
                             "REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)"
                           )
                         ]),
                         _vm._v(" "),
+                        _c("div", [_vm._v("BANK: CBZ")]),
+                        _vm._v(" "),
                         _c("div", [
-                          _vm._v("  CURRENCY: UNITED STATES DOLLARS (USD)")
+                          _vm._v("CURRENCY: UNITED STATES DOLLARS (USD)")
                         ]),
                         _vm._v(" "),
                         _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850108")]),
@@ -1057,13 +1067,15 @@ var render = function() {
                       _c("v-card-title", [_vm._v("Nonrefundable FEEs(ZWL)")]),
                       _vm._v(" "),
                       _c("v-card-text", [
-                        _c("div", { staticClass: "text-h6 text--primary" }, [
+                        _c("div", { staticClass: "text--primary" }, [
                           _vm._v(
                             "REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)"
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", [_vm._v("  CURRENCY: ZIM DOLLAR (ZWL)")]),
+                        _c("div", [_vm._v("BANK: CBZ")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("CURRENCY: ZIM DOLLAR (ZWL)")]),
                         _vm._v(" "),
                         _c("div", [_vm._v("ACCOUNT NUMBER: 10721064850020")]),
                         _vm._v(" "),

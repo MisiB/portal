@@ -52,8 +52,9 @@
                   <v-card flat class="grey lighten-3">
                       <v-card-title>Refundable FEEs(USD)</v-card-title>
                       <v-card-text>
-                           <div class="text-h5 text--primary">BID BONDS only</div>
-                            <div>  CURRENCY: UNITED STATES DOLLARS (USD)</div>
+                           <div class="text--primary">BID BONDS only</div>
+                            <div>BANK: CBZ</div>
+                            <div>CURRENCY: UNITED STATES DOLLARS (USD)</div>
                             <div>ACCOUNT NUMBER: 10721064850128</div>
                             <div>BRANCH SORT CODE: 6101</div>
                             <div>SWIFT CODE: COBZZWHAXXX</div>
@@ -64,8 +65,9 @@
                   <v-card flat class="grey lighten-3">
                       <v-card-title>Refundable FEEs(ZWL)</v-card-title>
                       <v-card-text>
-                           <div class="text-h5 text--primary">BID BONDS only</div>
-                            <div>  CURRENCY: ZIM DOLLAR (ZWL)</div>
+                           <div class="text--primary">BID BONDS only</div>
+                            <div>BANK: CBZ</div>
+                            <div>CURRENCY: ZIM DOLLAR (ZWL)</div>
                             <div>ACCOUNT NUMBER: 10721064850118</div>
                             <div>BRANCH SORT CODE: ---</div>
                             <div>SWIFT CODE: ------</div>
@@ -79,8 +81,9 @@
                   <v-card flat class="grey lighten-3">
                       <v-card-title>Nonrefundable FEEs(USD)</v-card-title>
                          <v-card-text>
-                           <div class="text-h6 text--primary">REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)</div>
-                            <div>  CURRENCY: UNITED STATES DOLLARS (USD)</div>
+                           <div class="text--primary">REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)</div>
+                            <div>BANK: CBZ</div>
+                            <div>CURRENCY: UNITED STATES DOLLARS (USD)</div>
                             <div>ACCOUNT NUMBER: 10721064850108</div>
                             <div>BRANCH SORT CODE: 6101</div>
                             <div>SWIFT CODE: COBZZWHAXXX</div>
@@ -91,8 +94,9 @@
                   <v-card flat class="grey lighten-3">
                       <v-card-title>Nonrefundable FEEs(ZWL)</v-card-title>
                         <v-card-text>
-                            <div class="text-h6 text--primary">REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)</div>
-                            <div>  CURRENCY: ZIM DOLLAR (ZWL)</div>
+                            <div class="text--primary">REGISTRATIONS, BID ESTABLISHMENT FEES; TRAINING FEES; AND ADMIN FEES (Contract, SPOC & Other Admin Fees)</div>
+                            <div>BANK: CBZ</div>
+                            <div>CURRENCY: ZIM DOLLAR (ZWL)</div>
                             <div>ACCOUNT NUMBER: 10721064850020</div>
                             <div>BRANCH SORT CODE: 6101</div>
                             <div>SWIFT CODE: COBZZWHAXXX</div>
