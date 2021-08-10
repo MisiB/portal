@@ -662,30 +662,24 @@ var render = function() {
                                             "td",
                                             { staticClass: "d-flex" },
                                             [
-                                              doc.uploaded
-                                                ? _c(
-                                                    "v-btn",
-                                                    {
-                                                      staticClass:
-                                                        "white--text mt-1",
-                                                      attrs: {
-                                                        color: "green",
-                                                        depressed: "",
-                                                        small: ""
-                                                      },
-                                                      on: {
-                                                        click: function(
-                                                          $event
-                                                        ) {
-                                                          return _vm.openUpload(
-                                                            doc
-                                                          )
-                                                        }
-                                                      }
-                                                    },
-                                                    [_vm._v("Upload")]
-                                                  )
-                                                : _vm._e()
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  staticClass:
+                                                    "white--text mt-1",
+                                                  attrs: {
+                                                    color: "green",
+                                                    depressed: "",
+                                                    small: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.openUpload(doc)
+                                                    }
+                                                  }
+                                                },
+                                                [_vm._v("Upload")]
+                                              )
                                             ],
                                             1
                                           )

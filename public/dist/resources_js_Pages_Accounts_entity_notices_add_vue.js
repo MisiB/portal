@@ -195,7 +195,7 @@ __webpack_require__.r(__webpack_exports__);
         description: '',
         filename: null,
         bidsecurity: '',
-        alidityperiod: '',
+        validityperiod: '',
         currency: '',
         tendernumber: ''
       }),

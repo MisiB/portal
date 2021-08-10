@@ -126,6 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['errors', 'successMessage', 'errorMessage', 'notice', 'spoc', 'establishment'],
@@ -667,6 +668,14 @@ var render = function() {
                                       _c("tr", [
                                         _c("td", [
                                           _vm._v(_vm._s(_vm.notice.title))
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(_vm.notice.tendernumber)
+                                          )
                                         ])
                                       ]),
                                       _vm._v(" "),
