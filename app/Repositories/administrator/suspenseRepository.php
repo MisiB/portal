@@ -5,7 +5,25 @@ use App\Models\suspense;
 
 class suspenseRepository{
 
-    public function get_positive_balances($account){
+    public function get_positive_balances(){
+      $data = suspense::with('suspenseReceipts','company')->wherestatus('PENDING')->get();
+
+       $summary = [];
+       if(count($data)>0){
+         $grouped = $data->groupBy('accountnumber');
+         foreach ($grouped as $key => $value) {
+                 $totalbalance = 0 ;
+                foreach ($value as $ky => $val) {
+                 $deposit = $val->amount;
+                 $receipted = count($val->suspenseReceipts)>0 ? $val->suspenseReceipts->sum("amount") :0;
+                 $balance = $deposit-$receipted;
+                 $totalbalance = $totalbalance + $balance;
+                }
+              $summary[]=array('accountnumber' =>$key,"total"=>$totalbalance);
+         }
+       }
+
+       return array("summary"=>$summary,"data"=>$data);
 
     }
 

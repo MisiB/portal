@@ -3,6 +3,7 @@
 /public/storage
 /public/proofs
 /public/dist
+/public/refundletters
 /public/js
 /storage/*.key
 /vendor
