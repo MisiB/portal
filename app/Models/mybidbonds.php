@@ -22,4 +22,8 @@ class mybidbonds extends Model
     public function entity(){
         return $this->hasOne(entity::class,'id','entity_id');
     }
+
+    public function refunddata(){
+        return $this->hasOne(bidbondrefund::class,'mybidbond_id','id');
+    }
 }
