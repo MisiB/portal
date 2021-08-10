@@ -44,6 +44,7 @@ use App\Http\Controllers\administration\awaitingInvoicesController ;
 use App\Http\Controllers\administration\customeruserController;
 use App\Http\Controllers\administration\awaitingsupplierinvoiceController;
 use App\Http\Controllers\administration\reports\finance\revenueController;
+use App\Http\Controllers\administration\reports\finance\tenderrevenueController;
 use App\Http\Controllers\administrator\customerController;
 use Illuminate\Support\Facades\Route;
 
@@ -92,6 +93,7 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::resource('/awaitingsupplierinvoices',awaitingsupplierinvoiceController::class)->middleware(['checkpermission']);
       Route::resource('/customerusers',customeruserController::class)->middleware(['checkpermission']);
       Route::resource('/report-revenue-downloads',revenueController::class);
+      Route::resource('/report-tender-revenue',tenderrevenueController::class);
       
     });
 });
