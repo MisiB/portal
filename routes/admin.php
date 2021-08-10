@@ -93,7 +93,7 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::resource('/awaitingsupplierinvoices',awaitingsupplierinvoiceController::class)->middleware(['checkpermission']);
       Route::resource('/customerusers',customeruserController::class)->middleware(['checkpermission']);
       Route::resource('/report-revenue-downloads',revenueController::class);
-      Route::resource('/report-tender-revenue',tenderrevenueController::class);
+      Route::resource('/report-tender-revenue',tenderrevenueController::class)->middleware(['checkpermission']);
       
     });
 });
