@@ -9,8 +9,11 @@ import moment from 'moment';
 
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import excel from 'vue-excel-export'
+
 Vue.use(VueSweetalert2);
 Vue.use(plugin)
+Vue.use(excel)
 const route = window.route
 Vue.prototype.$route = route
 Vue.filter('formatDate',function(value){
