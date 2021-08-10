@@ -34,7 +34,7 @@ use App\Http\Controllers\administration\spocfeeController;
 use App\Http\Controllers\administration\suppliercommentsController;
 use App\Http\Controllers\administration\supplierpriceController;
 use App\Http\Controllers\administration\suppliertypeController;
-use App\Http\Controllers\administration\reports\finance\suspensereportController;
+use App\Http\Controllers\administration\reports\finance\suspenseReportController;
 use App\Http\Controllers\administration\tenderfeeController;
 use App\Http\Controllers\administration\tenderinvoicingController;
 use App\Http\Controllers\administration\tenderreceiptingController;
