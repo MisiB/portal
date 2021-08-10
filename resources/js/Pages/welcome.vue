@@ -28,7 +28,7 @@
                                   <v-select outlined label=" Select Certificate Type" :error-messages="errors.type" v-model="form.type" :items="types">
 
                                   </v-select>
-                              </v-col>
+                              </v-col> 
                               <v-col md="6" sm="12">
                                   <v-text-field outlined label="Certificate Number" :error-messages="errors.code" v-model="form.code"></v-text-field>
                               </v-col>
