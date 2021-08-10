@@ -3,8 +3,12 @@
 /public/storage
 /public/proofs
 /public/dist
+<<<<<<< HEAD
 /public/refundletters
 /public/documents
+=======
+/public/js
+>>>>>>> 2a8cb699d272f6770ca866ae71e6bce4e6500ed4
 /storage/*.key
 /vendor
 .env
