@@ -8,6 +8,7 @@ use App\Console\Commands\palladium;
 use App\Console\Commands\backupDatabase;
 use App\Console\Commands\generateuuid;
 use App\Console\Commands\importStatement;
+use App\Console\Commands\pushMail;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -22,7 +23,8 @@ class Kernel extends ConsoleKernel
         palladium::class,
         backupDatabase::class,
         generateuuid::class,
-        importStatement::class
+        importStatement::class,
+        pushMail::class
     ];
 
     /**

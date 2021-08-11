@@ -4,13 +4,18 @@
 /public/proofs
 /public/dist
 <<<<<<< HEAD
+<<<<<<< HEAD
 /public/refundletters
 /public/documents
 =======
+=======
+/public/refundletters
+>>>>>>> 8fe7173d234085a764047e448b5a7f33cbcd9121
 /public/js
 >>>>>>> 2a8cb699d272f6770ca866ae71e6bce4e6500ed4
 /storage/*.key
 /vendor
+.gitignore
 .env
 .env.backup
 .phpunit.result.cache

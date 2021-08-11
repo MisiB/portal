@@ -34,7 +34,7 @@ use App\Http\Controllers\administration\spocfeeController;
 use App\Http\Controllers\administration\suppliercommentsController;
 use App\Http\Controllers\administration\supplierpriceController;
 use App\Http\Controllers\administration\suppliertypeController;
-use App\Http\Controllers\administration\suspensereportController;
+use App\Http\Controllers\administration\reports\finance\suspenseReportController;
 use App\Http\Controllers\administration\tenderfeeController;
 use App\Http\Controllers\administration\tenderinvoicingController;
 use App\Http\Controllers\administration\tenderreceiptingController;
@@ -48,6 +48,7 @@ use App\Http\Controllers\administration\reports\finance\bidbondrevenueController
 use App\Http\Controllers\administration\reports\finance\revenueController;
 use App\Http\Controllers\administration\reports\finance\tenderrevenueController;
 use App\Http\Controllers\administrator\customerController;
+//use App\Http\Controllers\administration\suspenseReportController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=>'auth:admin'],function(){
@@ -89,7 +90,7 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::resource('/procurementplans',plansController::class)->middleware(['checkpermission']);
       Route::resource('/procurementbudgets',budgetsController::class)->middleware(['checkpermission']);
       Route::resource('/procurementreturns',returnsController::class)->middleware(['checkpermission']);
-      Route::resource('/suspensereports',suspensereportController::class)->middleware(['checkpermission']);
+      Route::resource('/suspensereports',suspenseReportController::class);
       Route::resource('/revenuereport',revenuereportController::class)->middleware(['checkpermission']);
       Route::resource('/awaitinginvoices',awaitingInvoicesController::class)->middleware(['checkpermission']);
       Route::resource('/awaitingsupplierinvoices',awaitingsupplierinvoiceController::class)->middleware(['checkpermission']);
@@ -98,6 +99,7 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::resource('/report-tender-revenue',tenderrevenueController::class)->middleware(['checkpermission']);
       Route::resource('/report-bidbond-revenue',bidbondrevenueController::class);
       Route::resource('/report-bidbond-refund',bidbondrefundController::class);
+     // Route::resource('/report-suspense-balances',suspenseReportController::class);
       
     });
 });

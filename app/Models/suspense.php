@@ -14,4 +14,8 @@ class suspense extends Model
     public function suspenseReceipts(){
         return $this->hasMany(suspense_receipts::class,'suspense_id','id');
     }
+
+    public function company(){
+        return $this->hasOne(company::class,'id','company_id');
+    }
 }
