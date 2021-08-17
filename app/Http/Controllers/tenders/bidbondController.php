@@ -65,8 +65,11 @@ class bidbondController extends Controller
      */
     public function show($id)
     {
-        $bidbond = mybidbonds::with(['company','invoice'=>function($query){
+        $bid = mybidbonds::whereuuid($id)->first();
+        $company = $bid->company_id;
+        $bidbond = mybidbonds::with(['company','invoice'=>function($query)use($company){
             $query->where('status','PAID');
+            $query->where('company_id','=',$company);
             $query->where('type','REFUNDABLE');
         }])->whereuuid($id)->first();
         $pdf = PDF::loadView('bidbond',['bidbond'=>$bidbond]);
