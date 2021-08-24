@@ -52,7 +52,7 @@ class supplier_document_upload_repository implements \App\Interfaces\suppliers\s
 
 
     public function update(Request $request){
-        $path =$request->file('filename')->store('documents','sftp');
+        $path =$request->file('filename')->store('documents','my_files');
         $document = company_documents::whereid($request->id)->first();
         $document->path = $path;
         $document->save();
