@@ -226,7 +226,7 @@
                             </v-expansion-panels>
                             </div>
                             <div v-else>
-                                <v-alert color="danger">Found not found in suspense wallet</v-alert>
+                                <v-alert  color="red lighten-2">Not found in suspense wallet</v-alert>
                             </div>
                </v-card-text>
             </v-card>
