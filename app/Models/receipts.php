@@ -16,7 +16,7 @@ class receipts extends Model
     }
 
     public function tenderinvoices(){
-        return $this->hasMany(nonrefundable_invoices::class,'invoice_number','invoicenumber');
+        return $this->hasMany(tender_invoice::class,'invoice_number','invoicenumber');
     }
 
     public function company(){

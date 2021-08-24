@@ -14,4 +14,8 @@ class suspense_receipts extends Model
     public function suspenseAccount(){
         return $this->belongsTo(suspense::class,'id','suspense_id');
     }
+
+    public function receipt(){
+        return $this->hasOne(receipts::class,'receiptnumber','receiptnumber');
+    }
 }
