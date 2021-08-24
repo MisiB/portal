@@ -61,6 +61,7 @@
                             </template>
                             </v-simple-table>
                             <div class="headline mt-4 mb-4">Suspense Statement</div>
+                            <div v-if="data.suspense">
                              <v-expansion-panels>
                                 <v-expansion-panel>
                                 <v-expansion-panel-header>
@@ -223,6 +224,10 @@
                                 </v-expansion-panel-content>
                                 </v-expansion-panel>
                             </v-expansion-panels>
+                            </div>
+                            <div v-else>
+                                <v-alert color="danger">Found not found in suspense wallet</v-alert>
+                            </div>
                </v-card-text>
             </v-card>
             </v-dialog>
