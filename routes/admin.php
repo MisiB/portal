@@ -43,11 +43,13 @@ use App\Http\Controllers\administration\usersController as AppUsersController;
 use App\Http\Controllers\administration\awaitingInvoicesController ;
 use App\Http\Controllers\administration\customeruserController;
 use App\Http\Controllers\administration\awaitingsupplierinvoiceController;
+use App\Http\Controllers\administration\reports\finance\banktransactionsController as AppBanktransactionsController;
 use App\Http\Controllers\administration\reports\finance\bidbondrefundController;
 use App\Http\Controllers\administration\reports\finance\bidbondrevenueController;
 use App\Http\Controllers\administration\reports\finance\revenueController;
 use App\Http\Controllers\administration\reports\finance\tenderrevenueController;
 use App\Http\Controllers\administrator\customerController;
+use App\Http\Controllers\banktransactionsController;
 //use App\Http\Controllers\administration\suspenseReportController;
 use Illuminate\Support\Facades\Route;
 
@@ -97,8 +99,9 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::resource('/customerusers',customeruserController::class)->middleware(['checkpermission']);
       Route::resource('/report-revenue-downloads',revenueController::class);
       Route::resource('/report-tender-revenue',tenderrevenueController::class)->middleware(['checkpermission']);
-      Route::resource('/report-bidbond-revenue',bidbondrevenueController::class);
-      Route::resource('/report-bidbond-refund',bidbondrefundController::class);
+      Route::resource('/report-bidbond-revenue',bidbondrevenueController::class)->middleware(['checkpermission']);
+      Route::resource('/report-bidbond-refund',bidbondrefundController::class)->middleware(['checkpermission']);
+      Route::resource('/report-bankttransactions-audit',AppBanktransactionsController::class)->middleware(['checkpermission']);
      // Route::resource('/report-suspense-balances',suspenseReportController::class);
       
     });

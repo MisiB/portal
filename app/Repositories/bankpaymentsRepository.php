@@ -72,7 +72,12 @@ class bankpaymentsRepository implements bankpaymentsInterface{
                                        $value->save();
                                        $amount = $remaining;
                                    }
-                               
+                                     $amnt =0;
+                                     if($invoicedata[0]->cost<=$amount){
+                                         $amnt = $invoicedata[0]->cost;
+                                     }else{
+                                        $amnt = $amount;  
+                                     }
                                    $suspense_receipt =  suspense_receipts::create(['suspense_id'=>$value->id,'uuid'=>$uuid,'receiptnumber'=>$receiptnumber,'currency'=>$currency,'amount'=>$amount]);
                              
                                    receipts::firstOrCreate(
