@@ -24,6 +24,7 @@ class supplier_document_upload_repository implements \App\Interfaces\suppliers\s
                             ->map(function($document){
                             return[
                                 "id"=>$document->id,
+                                "company_document_id"=>!is_null($document->company) ? $document->company->id : '',
                                 "name"=>$document->name,
                                 "uploaded"=> !is_null($document->company) ? true : false,
                                 "status"=> !is_null($document->company) ? $document->company->status : '',
