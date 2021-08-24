@@ -52,11 +52,9 @@ class supplier_document_upload_repository implements \App\Interfaces\suppliers\s
 
 
     public function update(Request $request){
-<<<<<<< HEAD
+
         $path =$request->file('filename')->store('documents','my_files');
-=======
-        $path =$request->file('filename')->store('documents','my_files'); 
->>>>>>> f8ee306f2a76448788ba9b6c7d049d1c6c42accd
+
         $document = company_documents::whereid($request->id)->first();
         $document->path = $path;
         $document->save();
