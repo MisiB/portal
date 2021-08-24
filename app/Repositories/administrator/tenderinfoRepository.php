@@ -40,7 +40,7 @@ class tenderinfoRepository{
                     "tendernumber"=>$tender->tendernumber,
                     "entity"=>$tender->entity->name,
                     "description"=>'BIDBOND',
-                    "currency"=>$tender->currency->name,
+                    "currency"=>$tender->currency,
                     "status"=>$tender->paymentstatus,
                     "amount"=>$tender->amount,
                     "code"=>$tender->code
