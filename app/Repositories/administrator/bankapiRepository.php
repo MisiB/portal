@@ -138,7 +138,7 @@ class bankapiRepository{
 
 
   public function getTransaction(Request $request){
-      return banktransactions::with('company','suspense.suspenseReceipts.receipt.supplierinvoices.category','suspense.suspenseReceipts.receipt.supplierinvoices.currency','suspense.suspenseReceipts.receipt.tenderinvoices','suspense.suspenseReceipts.receipt.tenderinvoices.currency')->wheresource_reference($request->reference)->get();
+      return banktransactions::with(['company','suspense.suspenseReceipts.receipt.supplierinvoices.category','suspense.suspenseReceipts.receipt.supplierinvoices.currency','suspense.suspenseReceipts.receipt.tenderinvoices','suspense.suspenseReceipts.receipt.tenderinvoices.currency','receipts'])->wheresource_reference($request->reference)->get();
   }
 
 

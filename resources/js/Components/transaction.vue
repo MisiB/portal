@@ -228,6 +228,41 @@
                             <div v-else>
                                 <v-alert  color="red lighten-2">Not found in suspense wallet</v-alert>
                             </div>
+
+
+
+
+                            <div v-if="data.receipts.length>0">
+
+                                <div class="headline mt-4 mb-4">Direct Receipts</div>
+                                     <v-simple-table>
+                                              <template v-slot:default>
+                                    <tr v-for="receipt in data.receipts" :key="receipt.id">
+                                         <td>
+                                            {{receipt.updated_at | formatDate}}
+                                        </td>
+                                        <td>
+                                            {{receipt.receiptnumber}}
+                                        </td>
+                                        <td>
+                                          {{receipt.invoicenumber}}
+                                        </td>
+                                        <td>
+                                         {{receipt.type}}
+                                        </td>
+                                        <td>
+                                         {{receipt.description}}
+                                        </td>
+                                         <td>
+                                         {{receipt.method}}
+                                        </td>
+                                        <td>
+                                         {{receipt.currency}}{{receipt.amount}}
+                                        </td>
+                                    </tr>
+                                    </template>
+                                 </v-simple-table>
+                            </div>
                </v-card-text>
             </v-card>
             </v-dialog>

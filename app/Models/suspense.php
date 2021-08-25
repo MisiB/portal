@@ -18,4 +18,8 @@ class suspense extends Model
     public function company(){
         return $this->hasOne(company::class,'id','company_id');
     }
+
+    public function transfers(){
+        return $this->hasMany(suspensetransfer::class,'suspense_id','id');
+    }
 }
