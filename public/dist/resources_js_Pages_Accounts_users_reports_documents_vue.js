@@ -133,7 +133,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: {
     openUpload: function openUpload(documt) {
-      this.uploadModel = true, this.id = documt.company_document_id, this.document_id = document.id, this.title = documt.name, this.pages = documt.pages;
+      this.uploadModel = true, this.id = documt.company_document_id, this.document_id = documt.id, this.title = documt.name, this.pages = documt.pages;
     },
     upload: function upload() {
       var _this = this;
