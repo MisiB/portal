@@ -119,7 +119,7 @@ export  default {
       openUpload(documt){
           this.uploadModel = true,
           this.id = documt.company_document_id,
-          this.document_id = document.id,
+          this.document_id = documt.id,
           this.title = documt.name,
           this.pages = documt.pages
       },
