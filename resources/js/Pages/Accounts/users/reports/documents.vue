@@ -119,12 +119,14 @@ export  default {
       openUpload(documt){
           this.uploadModel = true,
           this.id = documt.company_document_id,
+          this.document_id = document.id,
           this.title = documt.name,
           this.pages = documt.pages
       },
       upload(){
              var formdata =new FormData()
             formdata.append('id',this.id)
+            formdata.append('document_id',this.document_id)
             formdata.append('pages',this.pages)
             formdata.append('filename',this.filename)
             if(this.$refs.form.validate()){
