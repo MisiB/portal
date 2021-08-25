@@ -18,4 +18,8 @@ class banktransactions extends Model
     public function suspense(){
         return $this->hasOne(suspense::class,'banktransaction_id','id');
     }
+
+    public function receipts(){
+        return $this->hasMany(receipts::class,'source_id','id');
+    }
 }

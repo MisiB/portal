@@ -153,7 +153,14 @@ class generalHelper
         $number->save();
         return $receipt;
     }
-
+    
+    public function get_transfer_number($id){
+        $number = receiptnumbers::first();
+        $receipt = 'TR'.Carbon::now()->year.''.Carbon::now()->month.''.Carbon::now()->day.''.$number->receipt.''.$id;
+        $number->receipt = $number->receipt+1;
+        $number->save();
+        return $receipt;
+    }
    public  function create_new_company($request){
        $company = company::create([
            'regnumber'=>$this->regnumber(),

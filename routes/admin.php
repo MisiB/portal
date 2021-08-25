@@ -48,6 +48,7 @@ use App\Http\Controllers\administration\reports\finance\bidbondrefundController;
 use App\Http\Controllers\administration\reports\finance\bidbondrevenueController;
 use App\Http\Controllers\administration\reports\finance\revenueController;
 use App\Http\Controllers\administration\reports\finance\tenderrevenueController;
+use App\Http\Controllers\administration\reports\finance\wallettransferController;
 use App\Http\Controllers\administrator\customerController;
 use App\Http\Controllers\banktransactionsController;
 //use App\Http\Controllers\administration\suspenseReportController;
@@ -102,6 +103,7 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::resource('/report-bidbond-revenue',bidbondrevenueController::class)->middleware(['checkpermission']);
       Route::resource('/report-bidbond-refund',bidbondrefundController::class)->middleware(['checkpermission']);
       Route::resource('/report-bankttransactions-audit',AppBanktransactionsController::class)->middleware(['checkpermission']);
+      Route::resource('/suspense-transfer',wallettransferController::class)->middleware(['checkpermission']);
      // Route::resource('/report-suspense-balances',suspenseReportController::class);
       
     });

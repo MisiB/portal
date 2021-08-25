@@ -15,7 +15,10 @@ public function search(Request $request){
         $query->orWhere('regnumber','LIKE','%'.$term.'%');
     })->orderBy('name','desc')->get();
 }
+public function find($regnumber){
 
+  return company::whereregnumber($regnumber)->first();
+}
 public function show($id){
     $company = company::whereid($id)->first();
     $suspense = new suspenseRepository();
