@@ -74,7 +74,7 @@ function verifyadminFee($code,$type)
 }
 
 function verifyBidBond($code){
-    $fee = mybidbonds::with('entity','company','currency')->wherecode($code)->wherepaymentstatus('PAID')->first();
+    $fee = mybidbonds::with('entity','company')->wherecode($code)->wherepaymentstatus('PAID')->first();
 
     $array =[];
    
