@@ -83,7 +83,7 @@ function verifyBidBond($code){
         $entity = $fee->entity->name;
         $company = $fee->company->name;
         $amount = $fee->amount;
-        $currency = $fee->currency->name;
+        $currency = $fee->currency;
         $paymentDate = $fee->updated_at;
         $validityperiod = $fee->validityperiod;
         $maturitydate = $fee->maturitydate;
