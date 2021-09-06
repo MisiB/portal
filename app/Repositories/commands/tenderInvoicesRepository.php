@@ -143,7 +143,7 @@ class tenderInvoicesRepository{
                        }  
                          foreach ($accountnumbers as $key => $accountnumber) {
                             $suspense =  suspense::wherecompany_id($company->id)
-                            ->wheresource('banktransactions')
+                            ->whereIn('source',['banktransactions','suspensetransfer'])
                             ->wherestatus('PENDING')
                             ->whereaccountnumber($accountnumber->accountnumber)
                             ->first();
