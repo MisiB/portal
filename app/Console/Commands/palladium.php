@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\bank_rate;
 use Illuminate\Console\Command;
 use App\Models\company;
+use App\Models\entity;
 use App\Models\ledgeraccounts;
 use App\Models\nonrefundable_invoices;
 use App\Models\receipts;
@@ -67,8 +68,25 @@ class palladium extends Command
                $value->save();
               }
              
-              
-        
+         /**
+          *  create entity accounts
+           */     
+         $entityarray=[];
+
+         $entitylist = entity::whereposted(0)->get();
+
+          if(count($entitylist)>0){
+              foreach ($entitylist as $key => $value) {
+                $emails =$value->regnumber.'@dummy.co.zw';
+                $phones =rand(10000,100000);
+                $address = 'dummy address';
+                 $created_at =  !is_null($value->created_at) ? $value->created_at : Carbon::now();
+                $entityarray = array('source_id'=>$value->id,'regnumber'=>$value->regnumber,'name'=>utf8_encode($value->name),'phones'=>$phones,'emails'=>$emails,'address'=>$address,'created_at'=>$created_at);
+                DB::connection('mysql_remote')->table('accountdetails')->insert($entityarray);
+                $value->posted =1;
+                $value->save();
+              } 
+          }
         /**
          * get supplier invoices 
          */
