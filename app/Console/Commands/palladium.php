@@ -81,11 +81,11 @@ class palladium extends Command
                 $phones =rand(10000,100000);
                 $address = 'dummy address';
                  $created_at =  !is_null($value->created_at) ? $value->created_at : Carbon::now();
-                $customerarray = array('source_id'=>$value->id,'regnumber'=>$value->regnumber,'name'=>utf8_encode($value->name),'phones'=>$phones,'emails'=>$emails,'address'=>$address,'created_at'=>$created_at);
-                DB::connection('mysql_remote')->table('accountdetails')->insert($customerarray);
+                $entityarray = array('source_id'=>$value->id,'regnumber'=>$value->regnumber,'name'=>utf8_encode($value->name),'phones'=>$phones,'emails'=>$emails,'address'=>$address,'created_at'=>$created_at);
+                DB::connection('mysql_remote')->table('accountdetails')->insert($entityarray);
                 $value->posted =1;
                 $value->save();
-              }
+              } 
           }
         /**
          * get supplier invoices 
