@@ -6,6 +6,7 @@ use App\Console\Commands\processingAwaitingInvoice;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\palladium;
 use App\Console\Commands\backupDatabase;
+use App\Console\Commands\entityCodes;
 use App\Console\Commands\generateuuid;
 use App\Console\Commands\importStatement;
 use App\Console\Commands\pushMail;
@@ -24,7 +25,8 @@ class Kernel extends ConsoleKernel
         backupDatabase::class,
         generateuuid::class,
         importStatement::class,
-        pushMail::class
+        pushMail::class,
+        entityCodes::class
     ];
 
     /**

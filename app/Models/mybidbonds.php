@@ -26,4 +26,6 @@ class mybidbonds extends Model
     public function refunddata(){
         return $this->hasOne(bidbondrefund::class,'mybidbond_id','id');
     }
+
+    
 }
