@@ -12,7 +12,7 @@
          <span style="font-size:25px;"><b><i>{{$bidbond->tendernumber}}</i></b></span>
        <br><br>            
       <span style="font-size:18px">
-      The Procurement Regulatory Authority of Zimbabwe has received  a refundable BID BOND of <b>{{$bidbond->invoice->currency->name}}{{$bidbond->invoice->amount}}</b> from <b>{{$bidbond->company->name}}({{$bidbond->company->regnumber}})</b>
+      The Procurement Regulatory Authority of Zimbabwe has received  a refundable BID BOND of <b>{{$bidbond->currency}}{{$bidbond->amount}}</b> from <b>{{$bidbond->company->name}}({{$bidbond->company->regnumber}})</b>
         to participate in a tender for {{$bidbond->entity->name}} identified using {{ $bidbond->tendernumber}}. The  BID BOND  has validity period of {{$bidbond->validityperiod}} days  and is expected to  mature on  {{$bidbond->maturitydate}}
       </span>
      <br/><br/>
