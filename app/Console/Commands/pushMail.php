@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Imports\mailList;
 use App\Mail\workshop;
+use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -42,15 +43,22 @@ class pushMail extends Command
      */
     public function handle()
     {
-        $name = $this->ask("filename");
-        $data = Excel::toArray(new mailList,$name);
+         $users = User::get();
+      
      
-         if(count($data[0])>0)
+         if(count($users)>0)
          {
-             for ($i=0; $i <count($data[0]) ; $i++) { 
-                 Mail::to($data[0][$i][0])->queue(new workshop());
-                 Log::info("email send to:".$data[0][$i][0]);
+             Mail::to("mutemachimwea@praz.org.zw")->queue(new workshop());
+             foreach ($users as $key => $value) {
+                if (filter_var($value->email, FILTER_VALIDATE_EMAIL)) 
+                {
+                Mail::to($value->email)->queue(new workshop());
+                Log::info("email send to:".$value->email);
+                }
              }
+          
+               
+             
          }
-           }
+    }
 }

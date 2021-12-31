@@ -16,74 +16,33 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+} 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 </style>
 </head>
 <body>
 
-<h2>PRAZ Quarterly zoom interactive sessions for Procuring Entities (With Parastatals - PMU included)</h2>
+<h2>PRAZ PUBLIC PROCUREMENT ANNUAL CONFERENCE 2021</h2>
 <p>
-The Procurement Regulatory Authority of Zimbabwe Monitoring and Evaluation Division wishes to advise your Procuring Entity that it will be hosting group Quarterly zoom interactive sessions that are focused on discussing with PEs, procurement returns and reports standards and approaches.  The virtual sessions shall be held for respective Procuring Entity categories and are open for the respective Accounting Officers, Heads of PMUs and PMU members to participate. Invites will be sent to registered participants only. (Please complete fully the second table beneath and send back by e-mail to pe@praz.org.zw for your registration)
+PRAZ cordially invites your entity to its Inaugural Public Procurement Annual conference to be held in Victoria Falls on 21-22 October 2021 under the theme: “Balancing Emergencies with Efficiency and Integrity”.  The bidding community may  participate as conference delegates, by advertising your services/products through placement of audio-visuals or as a conference partner. It  is a “blended” conference -thus presenting an excellent opportunity to market your product/service to +/- 200 Public Procurement  Practitioners in attendance both physically and virtually.
 </p>
+<p><a href="https://portal.praz.org.zw/img/advert.jpg" class="button">Download Flier</a></p>
+<h5>For more information Please contact</h5>
+<p>
 
-<table>
- <thead>
-     <tr>
-         <th>Date</th>
-         <th>Time</th>
-         <th>PEs Category</th>
-     </tr>
- </thead>
-<tbody>
-    <tr><td>Thursday 12 August 2021</td><td>1000-1200hrs</td><td>Commissions- PMU</td></tr>
-    <tr><td>Friday 13 August 2021</td><td>1000-1200hrs</td><td>Ministries- PMU</td></tr>
-    <tr><td>Monday16 August 2021</td><td>1000-1200hrs</td><td>Local Authorities- PMU</td></tr>
-    <tr><td>Tuesday 17 August 2021</td><td>1000-1200hrs</td><td>Parastatals - PMU/td></tr>
-    <tr><td>Wednesday 18 August 2021</td><td>1000-1130hrs</td><td>Local Authorities- Accounting Officers</td></tr>
-    <tr><td>Wednesday 18 August 2021</td><td>1400-1530hrs</td><td>Parastatals- Accounting Officers</td></tr>
-    <tr><td>Thursday 19 August 2021</td><td>1000-1130hrs</td><td>Commissions- Accounting Officers</td></tr>
-    <tr><td>Thursday 19 August 2021</td><td>1400-1530hrs</td><td>Ministries- Accounting Officers</td></tr>
-</tbody>
-</table>
- <p>The discussion will be limited to the set time and should you have specific questions that you would like the M & E team to prepare responses for, kindly send them through to pe@praz.org.zw at least 4 hours before the meeting starts.  A register will be maintained for the Authorityâ€™s reporting purposes. We look forward to your participation.</p>
- <br/>
- <table>
- <thead>
-     <tr>
-         <th>Mr./Mrs./Ms./Miss</th>
-         <th>Surname</th>
-         <th>Name</th>
-         <th>Procuring Entity</th>
-         <th>Title/Position</th>
-         <th>E-mail Address</th>
-     </tr>
- </thead>
-<tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tbody>
- </table>
- <br/>
-<p>Kindly ensure to include your gender, to enable the Authorityâ€™s reporting metrics </p>
-<br/>
-<p>Procurement Regulatory Authority of Zimbabwe (PRAZ)<br/>
-9th floor Pearl House Building<br/>
-61 Samora Machel Ave<br/>
-Harare.
+Acting Business Development and Strategy Manager <br/>
+ Ano Mutemachimwe <br/>
+ mutemachimwea@praz.org.zw <br/>
+  + 263 71 289 9425 
 </p>
 
 

@@ -21,8 +21,11 @@ class noticeRepository{
                 if(Carbon::parse($value->close_date)->gte(Carbon::now())){
                 $active = 'Y';
                 }
+               if($active =="Y")
+               {
                $array[] = array("uuid"=>$value->uuid,'entity'=>$value->entity->name,'title'=>$value->title,'close_date'=>$value->close_date,'close_time'=>$value->close_time,'status'=>$value->status,'active'=>$active);
-            }
+               }
+              }
         }
 
         return $array;
@@ -39,8 +42,12 @@ class noticeRepository{
                 if(Carbon::parse($value->close_date)->gte(Carbon::now())){
                 $active = 'Y';
                 }
+             if($active =="Y")
+                {
+
                $array[] = array("uuid"=>$value->uuid,'entity'=>$value->entity->name,'title'=>$value->title,'close_date'=>$value->close_date,'close_time'=>$value->close_time,'status'=>$value->status,'active'=>$active);
-            }
+               }
+ }
         }
 
         return $array;

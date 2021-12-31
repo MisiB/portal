@@ -16,7 +16,7 @@ class suppliercommentRepository{
         company_document_comment::create(['company_id'=>$request->company,'comment'=>$request->comment,'user_id'=>Auth::guard('admin')->user()->id]);
         $user = company::whereid($request->company)->with('users')->first();
 
-        Notification::send($user, new documentNotification($request->comment));
+        Notification::send($user->users, new documentNotification($request->comment));
         return array('status'=>'successMessage','message'=>'Comment Successfully added');
     }
 }

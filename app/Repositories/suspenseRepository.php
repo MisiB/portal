@@ -34,12 +34,13 @@ class suspenseRepository implements suspenseInterface{
     {
         $suspense = suspense::with('suspenseReceipts')->wherecompany_id($company->id)->whereaccountnumber($accountnumber)->get();
          $total_deposited =  count($suspense)>0 ? $suspense->sum('amount') : 0;
-
+         //$total_deposited =0;
          $total_receipted=0;
 
          if(count($suspense)>0)
          {
             foreach ($suspense as $key => $value) {
+                // $total_deposited =  $total_deposited + number_format(preg_replace('/[^A-Za-z0-9\-]/', '',$value->amount);
                  $receipted =  count($value->suspenseReceipts)>0 ? $value->suspenseReceipts->sum('amount') : 0;
                  if($value->amount == $receipted){
 

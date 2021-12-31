@@ -43,7 +43,7 @@ class banktransactionsRepository implements banktransactionsInterface{
                                             'trans_date'=>$request->trans_date,
                                             'referencenumber'=>$request->referencenumber,
                                             'source_reference'=>$request->source_reference,
-                                            'statement_reference'=>!is_null($request->praz_customer_name) ? $request->praz_customer_name : '', 
+                                            'statement_reference'=>!is_null($request->statement_reference) ? $request->statement_reference : '', 
                                             'customer_number'=>$customer_number,
                                             'description'=>$request->description,
                                             'amount'=>$request->amount,

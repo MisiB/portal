@@ -10,6 +10,7 @@ use App\Console\Commands\entityCodes;
 use App\Console\Commands\generateuuid;
 use App\Console\Commands\importStatement;
 use App\Console\Commands\pushMail;
+use App\Console\Commands\supplierlist;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -26,7 +27,8 @@ class Kernel extends ConsoleKernel
         generateuuid::class,
         importStatement::class,
         pushMail::class,
-        entityCodes::class
+        entityCodes::class,
+        supplierlist::class
     ];
 
     /**
