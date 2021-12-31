@@ -166,6 +166,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -793,7 +794,11 @@ var render = function() {
                                         "div",
                                         { staticClass: "black--text" },
                                         [_vm._v(_vm._s(inv.invoice_number))]
-                                      )
+                                      ),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "red--text" }, [
+                                        _vm._v(_vm._s(inv.settlement))
+                                      ])
                                     ]
                                   ),
                                   _vm._v(" "),

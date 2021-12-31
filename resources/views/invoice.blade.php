@@ -40,7 +40,7 @@
                     <td>{{$invo->created_at}}</td>
                     <td>{{$invo->category->code}}</td>
                     <td>{{$invo->category->name}}({{$invo->year}})</td> 
-                    <td></td>                   
+                    <td>{{$invo->settlement}}</td>                   
                     <td class="text-right">{{$invo->currency->name}}{{$invo->cost}}</td>
                
                 </tr>

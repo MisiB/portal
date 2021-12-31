@@ -82,6 +82,7 @@
                                 <small>Invoice number</small>
                             </div>
                             <div class="black--text">{{inv.invoice_number}}</div>
+                             <div class="red--text">{{inv.settlement}}</div>
                         </v-col>
                         <v-col cols="6" sm="3" class="text-right">
 

@@ -121,6 +121,10 @@
                                <div :class="`${reg.status}`">
                                    {{reg.status}}
                                </div>
+                               <div>
+                                   {{reg.option}}
+                               </div>
+
                               
                            </div>
                            <div>

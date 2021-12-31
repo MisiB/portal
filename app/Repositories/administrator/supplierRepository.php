@@ -61,7 +61,8 @@ class supplierRepository{
 
     public function approve(Request $request){
        $company = company_documents::wherecompany_id($request->id)->update(['status'=>'APPROVED','approved_by'=>Auth::guard('admin')->user()->id]);
-    $suppliers = suppliers::wherecompany_id($request->id)->wherestatus('PENDING')->update(['status'=>'APPROVED']);
+        $issuedOn = Carbon::now();
+       $suppliers = suppliers::wherecompany_id($request->id)->wherestatus('PENDING')->update(['status'=>'APPROVED','issuedOn'=>$issuedOn]);
     return array('status'=>'success','message'=>'Documents successfully approved');
     }
 }

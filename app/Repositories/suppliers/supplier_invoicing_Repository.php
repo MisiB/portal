@@ -58,10 +58,14 @@ class supplier_invoicing_Repository implements \App\Interfaces\suppliers\supplie
         if($this->check_currency($invoicenumber,$request->currency))
         {
         $price = $this->PRICING->getPrice($company->locality);
+
         $rate  = $this->EXCHANGE->getInternalRate($request->currency) ;
         $exchange = !is_null($rate) ? $rate->value : 1;
         $exchange_id = !is_null($rate) ? $rate->id : 0;
         $finalPrice = !is_null($price) ? $price->price *$exchange : 0;
+        if($request->option =='QUARTERLY'){
+            $finalPrice = $finalPrice/4;
+        }
         if($finalPrice>0) {
             nonrefundable_invoices::create([
                 'invoice_number' => $invoicenumber,
@@ -70,6 +74,7 @@ class supplier_invoicing_Repository implements \App\Interfaces\suppliers\supplie
                 'year' => $request->year,
                 'currency_id' => $request->currency,
                 'exchange_id' => $exchange_id,
+                'settlement'=>$request->option,
                 'status' => 'PENDING',
                 'cost' => $finalPrice,
                 'user_id' => $request->user()->id
@@ -199,8 +204,19 @@ class supplier_invoicing_Repository implements \App\Interfaces\suppliers\supplie
             foreach ($invoice as $inv){
                 $code = $this->HELPER->helper_generate_code($inv->company->id);
                 $uuid = (string)Str::uuid();
+                $expire_date = "2022-12-31 00:00:00";
+                if($inv->settlement=='QUARTERLY'){
+                    $expire_date = "2022-03-31 00:00:00";  
+                }
+                $issuedOn="";
+                if($status=='APPROVED'){
+                 $issuedOn = Carbon::now();
+                }
                 suppliers::firstOrCreate(['company_id'=>$inv->company->id,'category_id'=>$inv->category_id,'expire_year'=>$inv->year],
-                    ['company_id'=>$inv->company->id,'category_id'=>$inv->category_id,'uuid'=>$uuid,'expire_year'=>$inv->year,'status'=>$status,'code'=>$code]);
+                    ['company_id'=>$inv->company->id,'uuid'=>$uuid,'category_id'=>$inv->category_id,'expire_year'=>$inv->year,'expiry_date'=>$expire_date,'issuedOn'=>$issuedOn,'option'=>$inv->settlement,'status'=>$status,'code'=>$code]);
+     
+               // suppliers::firstOrCreate(['company_id'=>$inv->company->id,'category_id'=>$inv->category_id,'expire_year'=>$inv->year],
+                  //  ['company_id'=>$inv->company->id,'category_id'=>$inv->category_id,'uuid'=>$uuid,'expire_year'=>$inv->year,'status'=>$status,'code'=>$code]);
             }
 
         }
@@ -223,8 +239,16 @@ class supplier_invoicing_Repository implements \App\Interfaces\suppliers\supplie
             foreach ($invoice as $inv){
                 $code = $this->HELPER->helper_generate_code($inv->company->id);
                 $uuid = (string)Str::uuid();
+                $expire_date = "2022-12-31 00:00:00";
+                if($inv->settlement=='QUARTERLY'){
+                    $expire_date = "2022-03-31 00:00:00";  
+                }
+                $issuedOn="";
+                if($status=='APPROVED'){
+                 $issuedOn = Carbon::now();
+                }
                 suppliers::firstOrCreate(['company_id'=>$inv->company->id,'category_id'=>$inv->category_id,'expire_year'=>$inv->year],
-                    ['company_id'=>$inv->company->id,'uuid'=>$uuid,'category_id'=>$inv->category_id,'expire_year'=>$inv->year,'status'=>$status,'code'=>$code]);
+                    ['company_id'=>$inv->company->id,'uuid'=>$uuid,'category_id'=>$inv->category_id,'expire_year'=>$inv->year,'expiry_date'=>$expire_date,'issuedOn'=>$issuedOn,'option'=>$inv->settlement,'status'=>$status,'code'=>$code]);
             }
 
         }

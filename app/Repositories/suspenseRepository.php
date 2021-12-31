@@ -22,7 +22,7 @@ class suspenseRepository implements suspenseInterface{
 
     public function captureRecord(array $args)
     {
-        suspense::firstOrCreate(['banktransaction_id'=>$args['banktransaction_id']],$args);
+        suspense::firstOrCreate(['banktransaction_id'=>$args['banktransaction_id'],'source'=>'banktransactions'],$args);
     }
 
     public function captureMobile(array $args)

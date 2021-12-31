@@ -11,13 +11,17 @@ class certificateRepository implements certificateInterface{
         $supplier = suppliers::with('company','category')
                              ->whereuuid($uuid)
                              ->wherecompany_id($company->id)
-                             ->wherestatus('APPROVED')
-                             ->whereexpire_year(Carbon::now()->year)
+                             ->wherestatus('APPROVED')                        
                              ->first();
+        if(!is_null($supplier) && $supplier->expire_year == Carbon::now()->year){
           if(!is_null($supplier)){
               $supplier->printed = $supplier->printed+1;
               $supplier->save();
           }
-       return $supplier;
+          return ["supplier"=>$supplier,"message"=>"","status"=>"success"];
+        }else{
+            return ["supplier"=>$supplier,"message"=>"Cerificate will be accessible from 1 January ".$supplier->expire_year,"status"=>"error"];  
+        }
+      
     }
 }

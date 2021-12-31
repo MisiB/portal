@@ -165,6 +165,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['errors', 'successMessage', 'errorMessage', 'categorylist', 'regyears', 'currencylist'],
@@ -182,11 +204,22 @@ __webpack_require__.r(__webpack_exports__);
       yearRules: [function (v) {
         return !!v || 'Select Registration Year';
       }],
+      optionRules: [function (v) {
+        return !!v || 'Select Settlement Option';
+      }],
       currency: '',
       year: '',
+      option: '',
       confirmRegistration: false,
       loading: false,
-      form: true
+      form: true,
+      period: [{
+        name: 'ONCE-OFF SETTLEMENT',
+        value: 'ONCE-OFF'
+      }, {
+        name: 'QUARTERLY INSTALLMENT',
+        value: 'QUARTERLY'
+      }]
     };
   },
   methods: {
@@ -205,7 +238,8 @@ __webpack_require__.r(__webpack_exports__);
       var data = {
         category: this.cat.id,
         year: this.year,
-        currency: this.currency
+        currency: this.currency,
+        option: this.option
       };
       this.loading = true;
       this.$inertia.post('/bidders/Invoicing', data).then(function () {
@@ -896,6 +930,24 @@ var render = function() {
                           },
                           expression: "year"
                         }
+                      }),
+                      _vm._v(" "),
+                      _c("v-select", {
+                        attrs: {
+                          items: _vm.period,
+                          "item-text": "name",
+                          "item-value": "value",
+                          outlined: "",
+                          rules: _vm.optionRules,
+                          label: "Settlement Options"
+                        },
+                        model: {
+                          value: _vm.option,
+                          callback: function($$v) {
+                            _vm.option = $$v
+                          },
+                          expression: "option"
+                        }
                       })
                     ],
                     1
@@ -936,7 +988,7 @@ var render = function() {
       _c(
         "v-dialog",
         {
-          attrs: { "max-width": "600px" },
+          attrs: { width: "600" },
           model: {
             value: _vm.confirmRegistration,
             callback: function($$v) {
@@ -948,7 +1000,6 @@ var render = function() {
         [
           _c(
             "v-card",
-            { attrs: { "max-width": "600px" } },
             [
               _c(
                 "v-app-bar",
@@ -957,21 +1008,70 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("v-card-text", { staticClass: "pa-3" }, [
-                _c("div", [
-                  _vm._v("You about to register category  "),
-                  _c("b", [
-                    _vm._v(
-                      _vm._s(_vm.cat.name) + "(" + _vm._s(_vm.cat.code) + ")"
-                    )
-                  ]),
-                  _vm._v(
-                    " which will be valid from 1 January " +
-                      _vm._s(_vm.year) +
-                      " to 31 December " +
-                      _vm._s(_vm.year)
-                  )
-                ])
+              _c("v-card-text", { staticClass: "pa-3 text-center" }, [
+                _c(
+                  "div",
+                  [
+                    _vm.option == "ONCE-OFF"
+                      ? [
+                          _vm._v(
+                            "\n                  You about to register category  "
+                          ),
+                          _c("b", [
+                            _vm._v(
+                              _vm._s(_vm.cat.name) +
+                                "(" +
+                                _vm._s(_vm.cat.code) +
+                                ")"
+                            )
+                          ]),
+                          _vm._v(
+                            " which will be valid from 1 January " +
+                              _vm._s(_vm.year) +
+                              " to 31 December " +
+                              _vm._s(_vm.year) +
+                              "\n                  "
+                          )
+                        ]
+                      : [
+                          _c("div", [
+                            _vm._v("Category:"),
+                            _c("b", [
+                              _vm._v(
+                                _vm._s(_vm.cat.name) +
+                                  "(" +
+                                  _vm._s(_vm.cat.code) +
+                                  ")"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v("Settlement Option:"),
+                            _c("b", [
+                              _vm._v(
+                                _vm._s(_vm.cat.name) +
+                                  "(" +
+                                  _vm._s(_vm.cat.code) +
+                                  ")"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v(
+                              "Please Note this registration  will be valid from 1 January " +
+                                _vm._s(_vm.year) +
+                                " to 31 March " +
+                                _vm._s(_vm.year)
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p")
+                        ]
+                  ],
+                  2
+                )
               ]),
               _vm._v(" "),
               _c(

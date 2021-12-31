@@ -121,6 +121,17 @@
                          :rules="yearRules"
                          label="Select Year"
                      >
+                     </v-select> 
+
+                       <v-select
+                         v-model="option"
+                         :items="period"
+                         item-text="name"
+                         item-value="value"
+                         outlined
+                         :rules="optionRules"
+                         label="Settlement Options"
+                     >
                      </v-select>
              </v-card-text>
 
@@ -134,13 +145,24 @@
 
         </v-dialog>
 
-        <v-dialog v-model="confirmRegistration" max-width="600px">
-            <v-card max-width="600px">
+        <v-dialog v-model="confirmRegistration" width="600">
+            <v-card>
             <v-app-bar class="red lighten-2 white--text">               
                 <v-app-bar-title>Registration Warning</v-app-bar-title>
             </v-app-bar>
-                <v-card-text class="pa-3">
-                  <div>You about to register category  <b>{{cat.name}}({{cat.code}})</b> which will be valid from 1 January {{year}} to 31 December {{year}}</div>
+                <v-card-text class="pa-3 text-center">
+                  <div>
+                      <template v-if="option =='ONCE-OFF'">
+                      You about to register category  <b>{{cat.name}}({{cat.code}})</b> which will be valid from 1 January {{year}} to 31 December {{year}}
+                      </template>
+                      <template v-else>
+                          <div>Category:<b>{{cat.name}}({{cat.code}})</b></div> 
+                          <div>Settlement Option:<b>{{cat.name}}({{cat.code}})</b></div>
+                            <div>Please Note this registration  will be valid from 1 January {{year}} to 31 March {{year}}</div>
+                            <p></p>
+     
+                      </template>
+                    </div>
                 </v-card-text>
                 <v-card-actions>
                     <v-btn outlined rounded color="red" @click="confirmRegistration=false">Cancel</v-btn>
@@ -165,11 +187,17 @@ export  default {
             cat:{},
             currencyRules:[v => !!v || 'Select Preferred Currency'],
             yearRules:[v => !!v || 'Select Registration Year'],
+            optionRules:[v => !!v || 'Select Settlement Option'],
             currency:'',
             year:'',
+            option:'',
             confirmRegistration:false,
             loading:false,
-            form:true
+            form:true,
+            period:[
+                {name:'ONCE-OFF SETTLEMENT' , value:'ONCE-OFF'},
+                {name:'QUARTERLY INSTALLMENT' , value:'QUARTERLY'}
+                ]
         }
     },methods:{
         pickCategory(cat){
@@ -182,7 +210,7 @@ export  default {
              }
         },
         proceed(){
-            var data = {category:this.cat.id,year:this.year,currency:this.currency}
+            var data = {category:this.cat.id,year:this.year,currency:this.currency,option:this.option}
             this.loading = true
             this.$inertia.post('/bidders/Invoicing',data).then(()=>{
                this.loading = false

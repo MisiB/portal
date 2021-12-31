@@ -21,16 +21,15 @@ class certificateController extends Controller
 
      public function show($uuid){
        $company = $this->HELPER->get_company_name();
-       $response = $this->certificate->getCertificate($company,$uuid);
-
-       if(!is_null($response)){
+       $response = $this->certificate->getCertificate($company,$uuid); 
+       if($response['status']=='success'){
            // return view()
-       $pdf = PDF::loadView('suppliers.certificate',['supplier'=>$response]);
+       $pdf = PDF::loadView('suppliers.certificate',['supplier'=>$response['supplier']]);
     
-        return $pdf->download($response->category->code.'.pdf');
+        return $pdf->download($response['supplier']->category->code.'.pdf');
         // return view('suppliers.certificate',['supplier'=>$response]);
        }else{
-           return redirect()->route('dashboard')->with('errorMessage','Certificate not found');
+           return redirect()->route('dashboard')->with('errorMessage',$response['message']);
        }
      }
 }
